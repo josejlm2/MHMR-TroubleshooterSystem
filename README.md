@@ -18,4 +18,6 @@ Noel Templeton is our contact for the organization.
 
 #Team Members Information
 
-Team Name: Agile Ruby
+**Team Name:** Agile Ruby   
+**Scrum Master:** Travis Olbrich    
+**Product Owner:** [Jose Manriquez](https://github.com/josejlm2)
