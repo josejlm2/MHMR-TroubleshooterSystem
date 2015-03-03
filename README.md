@@ -19,5 +19,14 @@ Noel Templeton is our contact for the organization.
 #Team Members Information
 
 **Team Name:** Agile Ruby   
+**Team Members:**    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aaron Gotreaux    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lance Elliott    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jose Manriquez](https://github.com/josejlm2)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nicolas Botello](https://github.com/bote795)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Michael Ruggiero    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travis Olbrich    
+
 **Scrum Master:** Travis Olbrich    
 **Product Owner:** [Jose Manriquez](https://github.com/josejlm2)
+
