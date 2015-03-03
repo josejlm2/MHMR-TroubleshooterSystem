@@ -1,6 +1,8 @@
 # MHMR-TroubleshooterSystem
-This our public repository for our [CSCE 431 Software Engineering Project](http://courses.cse.tamu.edu/csce431/walker/). Our project is a work in progress and can be seen online [here](http://mhmr-troubleshootersystem.herokuapp.com/).
+This our public repository for our [CSCE 431 Software Engineering Project](http://courses.cse.tamu.edu/csce431/walker/). Our project is a [work in progress](https://www.pivotaltracker.com/projects/1291382/overview) and our project can be found [online] (http://mhmr-troubleshootersystem.herokuapp.com/).
 
+
+<img src="http://c1.staticflickr.com/9/8630/16705671331_6fbb523c12_b.jpg" />
 
 #Project information
 
