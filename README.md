@@ -22,9 +22,9 @@ The [MHMR Authority of Brazos Valley](http://mhmrabv.org/) is a public non-profi
 
 **Team Name:** Agile Ruby   
 **Team Members:**    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Aaron Gotreaux](https://github.com/atgotreaux)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lance Elliott](https://github.com/renzigalenzi)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jose Manriquez](https://github.com/josejlm2)    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Aaron Gotreaux](https://github.com/atgotreaux)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lance Elliott](https://github.com/renzigalenzi)      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jose Manriquez](https://github.com/josejlm2)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nicolas Botello](https://github.com/bote795)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Michael Ruggiero](https://github.com/Ruggiero3x)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travis Olbrich    
