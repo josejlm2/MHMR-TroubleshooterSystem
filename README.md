@@ -15,18 +15,18 @@ Allow MHMR staff to submit tickets to facilities staff for issues at various MHM
 ###Contact Info
 The [MHMR Authority of Brazos Valley](http://mhmrabv.org/) is a public non-profit community MHMR center. Through the Texas Department of State Health Services and Texas Department of Aging and Disabilities Services, they have the administrative responsibility and authority to provide a continuum of mental health and intellectual and development disability services to eligible individuals who live in Brazos, Burleson, Grimes, Leon, Madison, Robertson, and Washington counties. 
 
-Noel Templeton is our contact for the organization. 
+[Noel Templeton](mailto:ntempleton@mhmrabv.org) is our contact for the organization. 
 
 
 #Team Members Information
 
 **Team Name:** Agile Ruby   
 **Team Members:**    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aaron Gotreaux    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lance Elliott    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Aaron Gotreaux](https://github.com/atgotreaux)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Lance Elliott](https://github.com/renzigalenzi)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jose Manriquez](https://github.com/josejlm2)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nicolas Botello](https://github.com/bote795)    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Michael Ruggiero    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Michael Ruggiero](https://github.com/Ruggiero3x)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travis Olbrich    
 
 **Scrum Master:** Travis Olbrich    
