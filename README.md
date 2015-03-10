@@ -27,8 +27,8 @@ The [MHMR Authority of Brazos Valley](http://mhmrabv.org/) is a public non-profi
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Jose Manriquez](https://github.com/josejlm2)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Nicolas Botello](https://github.com/bote795)    
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Michael Ruggiero](https://github.com/Ruggiero3x)    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travis Olbrich    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Travis Olbrich](https://github.com/travisolbrich)    
 
-**Scrum Master:** Travis Olbrich    
+**Scrum Master:** [Travis Olbrich](https://github.com/travisolbrich)      
 **Product Owner:** [Jose Manriquez](https://github.com/josejlm2)
 
