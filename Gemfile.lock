@@ -169,6 +169,8 @@ GEM
     phantomjs (1.9.8.0)
     polyglot (0.3.5)
     procto (0.0.2)
+    purecss-rails (0.6.0)
+      railties (>= 3.2.6, < 5)
     rack (1.4.5)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -287,6 +289,7 @@ DEPENDENCIES
   jasmine-rails
   jquery-rails
   metric_fu
+  purecss-rails
   rails (= 3.2.16)
   rspec-rails (= 2.14)
   sass-rails (~> 3.2.3)
