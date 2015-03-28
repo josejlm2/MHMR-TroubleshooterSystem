@@ -1,0 +1,11 @@
+%h1  Categories#index
+-#Find me in app/views/categories/index.html.erb
+%table#categories
+ %thead
+  %th  id
+  %th  name
+ %tbody
+ - @categories.each do |category|
+  %tr
+   %td= category.id
+   %td= category.name

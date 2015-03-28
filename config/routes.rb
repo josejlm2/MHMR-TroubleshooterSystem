@@ -1,4 +1,14 @@
 MhmrTroubleshooter::Application.routes.draw do
+  get "categories/index"
+
+  get "categories/show"
+
+  get "categories/new"
+
+  get "categories/edit"
+
+  get "categories/delete"
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
   # The priority is based upon order of creation:
