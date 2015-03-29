@@ -2,6 +2,7 @@
 <p>Find me in app/views/categories/new.html.erb</p>
 %h2 Create New Movie
 
-= form_tag category_path, :method => :post do
+= form_tag '/categories/create', :method => :post do
  = label :category, :name, 'Category Name'
+ = text_field :category, :name
  = submit_tag 'Save Changes'

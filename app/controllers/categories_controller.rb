@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
 	@category =Category.new
   end
   def create
-	@category = Category.new(category_params)
+	@category = Category.new(params[:category])
 	if @category.save
 		redirect_to(:action => 'index')
 	else
