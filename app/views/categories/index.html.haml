@@ -4,8 +4,13 @@
  %thead
   %th  id
   %th  name
+  %th  edit
+  %th  delete
  %tbody
  - @categories.each do |category|
   %tr
    %td= category.id
    %td= category.name
+   %td= link_to 'Edit Info', edit_category_path(category), :method => :get
+   %td= link_to 'Delete', category_path(category), :method => :delete
+= link_to 'Create category', new_category_path

@@ -1,15 +1,4 @@
 MhmrTroubleshooter::Application.routes.draw do
-#  get "categories/index"
-
-#  get "categories/show"
-
- # get "categories/new"
-
-  #get "categories/edit"
-
-  #get "categories/delete"
-  #post "categories/create"
-  #put 'categories/update'
   resources :categories
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
 
