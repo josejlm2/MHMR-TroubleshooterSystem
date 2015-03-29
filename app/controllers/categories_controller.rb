@@ -19,8 +19,16 @@ class CategoriesController < ApplicationController
 	end
   end
   def edit
+	@category = Category.find(params[:id])
   end
-
+  def update
+	@category = Category.find(params[:id])
+	if @category.update_attributes(params[:category])
+		redirect_to categories_path(@category)
+	else
+		render('index')
+	end
+  end
   def delete
   end
 end
