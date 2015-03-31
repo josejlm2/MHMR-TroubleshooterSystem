@@ -17,6 +17,8 @@ module NavigationHelpers
       '/'
     when /^the list of categories$/
 	categories_path
+    when /^the show category$/
+	category_path(@category)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
