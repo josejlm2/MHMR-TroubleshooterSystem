@@ -19,6 +19,8 @@ module NavigationHelpers
 	categories_path
     when /^the show category$/
 	category_path(@category)
+    when /^the edit category page$/
+	edit_category_path(@category)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
