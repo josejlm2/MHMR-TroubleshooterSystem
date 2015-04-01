@@ -6,6 +6,12 @@ ruby '2.1.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Gems needed for to compile online on Heroku
+group :development do
+  gem 'taps'
+  gem 'rvm'
+end
+
 gem 'sqlite3'
 gem 'purecss-rails'
 
