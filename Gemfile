@@ -1,18 +1,20 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 gem 'rails', '3.2.16'
-ruby '2.1.2'
+ruby '2.1.5'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+
 # Gems needed for to compile online on Heroku
-group :development do
-  gem 'taps'
-  gem 'rvm'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
 end
 
-gem 'sqlite3'
 gem 'purecss-rails'
 
 # Gems used only for assets and not required
@@ -35,6 +37,7 @@ gem 'foreigner'
 group :development, :test do
   gem 'jasmine-rails' # if you plan to use JavaScript/CoffeeScript
 end
+
 # setup Cucumber, RSpec, autotest support
 group :test do
   gem 'rspec-rails', '2.14'
@@ -61,3 +64,8 @@ end
 
 # To use debugger
 # gem 'debugger'
+
+
+
+
+
