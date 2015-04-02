@@ -8,7 +8,6 @@ ruby '2.1.5'
 
 
 # Gems needed for to compile online on Heroku
-<<<<<<< HEAD
 #group :development, :test do
 #  gem 'sqlite3'
 #end
@@ -17,14 +16,6 @@ ruby '2.1.5'
 #end
 
 gem 'pg'
-=======
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
->>>>>>> d6c87766523ae6b749ef0c1cb195a033d9ff52fc
 
 gem 'purecss-rails'
 
