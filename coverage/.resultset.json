@@ -209,7 +209,7 @@
       "/home/nicolas/workspace/MHMR-TroubleshooterSystem/app/controllers/categories_controller.rb": [
         1,
         1,
-        0,
+        3,
         null,
         null,
         1,
@@ -321,8 +321,18 @@
         1,
         1,
         null
+      ],
+      "/home/nicolas/workspace/MHMR-TroubleshooterSystem/spec/models/category_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1428123873
+    "timestamp": 1428124612
   }
 }
