@@ -8,22 +8,22 @@ development:
 #  database: db/development.postgresql
   pool: 5
   timeout: 5000
-  username: myapp
-  password: 
+#  username: myapp
+#  password: 
 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 
-test: 
+test: &test 
   adapter: postgresql
   encoding: unicode
   database: my_database_test
 #  database: db/test.postgresql
   pool: 5
-  username: myapp
-  password: 
+#  username: myapp
+#  password: 
   
 production:
   adapter: postgresql
