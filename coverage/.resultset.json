@@ -59,6 +59,8 @@
         null,
         1,
         null,
+        1,
+        null,
         null,
         null,
         null,
@@ -206,6 +208,10 @@
         1,
         null
       ],
+      "/home/nicolas/workspace/MHMR-TroubleshooterSystem/app/helpers/emails_helper.rb": [
+        1,
+        null
+      ],
       "/home/nicolas/workspace/MHMR-TroubleshooterSystem/app/controllers/categories_controller.rb": [
         1,
         1,
@@ -254,11 +260,58 @@
         1,
         null
       ],
+      "/home/nicolas/workspace/MHMR-TroubleshooterSystem/app/controllers/emails_controller.rb": [
+        1,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/nicolas/workspace/MHMR-TroubleshooterSystem/app/models/email.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/nicolas/workspace/MHMR-TroubleshooterSystem/config/routes.rb": [
         1,
         1,
         1,
-        null,
+        1,
+        1,
         null,
         null,
         null,
@@ -331,8 +384,19 @@
         1,
         null,
         null
+      ],
+      "/home/nicolas/workspace/MHMR-TroubleshooterSystem/spec/models/email_spec.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1428124612
+    "timestamp": 1428518768
   }
 }
