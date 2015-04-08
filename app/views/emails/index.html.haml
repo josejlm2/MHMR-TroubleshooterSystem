@@ -1,0 +1,15 @@
+<h1>Emails#index</h1>
+<p>Find me in app/views/emails/index.html.erb</p>
+%table#emails
+ %thead
+  %th id
+  %th email
+ %tbody
+ - @emails.each do |email|
+  %tr
+   %td= email.id
+   %td= email.email_address
+   %td= link_to 'Edit Info', edit_email_path(email), :method => :get
+   %td= link_to 'Delete', email_path(email), :method => :delete
+= link_to 'Create Email', new_email_path
+
