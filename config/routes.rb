@@ -1,5 +1,6 @@
 MhmrTroubleshooter::Application.routes.draw do
   resources :categories
+  resources :tickets
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'categories#index'
   # The priority is based upon order of creation:
