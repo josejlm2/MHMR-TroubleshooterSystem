@@ -21,6 +21,12 @@ module NavigationHelpers
 	category_path(@category)
     when /^the edit category page$/
 	edit_category_path(@category)
+	when /^the list of tickets$/
+	ticket_path
+    when /^the show tickets$/
+	ticket_path(@ticket)
+    when /^the edit tickets page$/
+	edit_ticket_path(@ticket)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
