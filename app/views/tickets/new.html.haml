@@ -1,0 +1,44 @@
+<h1>Tickets#new</h1>
+<p>Find me in app/views/tickets/new.html.erb</p>
+
+<h1> Create New Ticket </h1>
+%p
+= form_tag tickets_path, :method => :post do
+ .modal-body
+  = label :ticket, :requestor, 'Ticket Requestor' 
+ .modal-body
+  = text_field :ticket, :requestor 
+ .modal-body
+  = label :ticket, :phone, 'Phone Number' 
+ .modal-body
+  = text_field :ticket, :phone 
+ .modal-body
+  = label :ticket, :ru, 'Ticket RU'
+ .modal-body
+  = text_field :ticket, :ru 
+ .modal-body
+  = label :ticket, :email, 'Email'
+ .modal-body
+  = text_field :ticket, :email
+ .modal-body
+  = label :ticket, :room, 'Room'
+ .modal-body
+  = text_field :ticket, :room
+ .modal-body
+  = label :ticket, :subject, 'Subject'
+ .modal-body
+  = text_field :ticket, :subject
+ .modal-body
+  = label :ticket, :description, 'Description'
+ .modal-body
+  = text_field :ticket, :description
+ .modal-body
+  = label :ticket, :location_id, 'Location ID'
+ .modal-body
+  = text_field :ticket, :location_id
+ .modal-body
+  = label :ticket, :ticket_category_id, 'Ticket Category ID'
+ .modal-body
+  = text_field :ticket, :ticket_category_id
+ .modal-footer
+  = submit_tag 'Save Changes'

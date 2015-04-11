@@ -1,0 +1,9 @@
+<h1>Tickets#edit</h1>
+<p>Find me in app/views/tickets/edit.html.erb</p>
+%h2 edit Ticket
+-#if able to figure out hwo to use UI helpers use moive_path(@movie)
+= form_tag ticket_path(@ticket), :method => :put do
+ = label :ticket, :requestor, 'Ticket Requestor'
+ = text_field :ticket, :requestor
+ = submit_tag 'save changes'
+= link_to 'back to ticket list', tickets_path
