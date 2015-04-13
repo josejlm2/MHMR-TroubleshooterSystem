@@ -1,4 +1,5 @@
 MhmrTroubleshooter::Application.routes.draw do
+  resources :emails # , except:[:show]
   resources :categories
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'categories#index'
