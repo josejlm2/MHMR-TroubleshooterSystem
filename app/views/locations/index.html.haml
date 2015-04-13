@@ -1,0 +1,16 @@
+%h1  Locations#index
+#Find me in app/views/locations/index.html.erb
+%table#locations
+ %thead
+  %th  id
+  %th  name
+  %th  edit
+  %th  delete
+ %tbody
+ - @locations.each do |location|
+  %tr
+   %td= location.id
+   %td= location.name
+   %td= link_to 'Edit Location', edit_location_path(location), :method => :get
+   %td= link_to 'Delete', location_path(location), :method => :delete
+= link_to 'Create location', new_location_path

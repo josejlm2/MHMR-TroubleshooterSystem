@@ -21,6 +21,12 @@ module NavigationHelpers
 	category_path(@category)
     when /^the edit category page$/
 	edit_category_path(@category)
+    when /^the list of emails$/
+	emails_path
+    when /^the show email$/
+	email_path(@email)
+    when /^the edit email page$/
+	edit_email_path(@email)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

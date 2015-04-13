@@ -1,0 +1,8 @@
+<h1>Emails#new</h1>
+<p>Find me in app/views/emails/new.html.erb</p>
+%h2 New Email
+= form_tag emails_path, :method => :post do
+ = label :email, :email_address, 'Email'
+ = email_field :email, :email_address
+ = submit_tag 'Save Changes'
+

@@ -1,6 +1,20 @@
 MhmrTroubleshooter::Application.routes.draw do
+  get "locations/index"
+
+  get "locations/create"
+
+  get "locations/new"
+
+  get "locations/edit"
+
+  get "locations/update"
+
+  get "locations/destroy"
+
+  resources :emails # , except:[:show]
   resources :categories
   resources :tickets
+  resources :locations
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'categories#index'
   # The priority is based upon order of creation:
