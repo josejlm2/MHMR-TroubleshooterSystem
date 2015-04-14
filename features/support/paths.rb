@@ -21,6 +21,12 @@ module NavigationHelpers
 	category_path(@category)
     when /^the edit category page$/
 	edit_category_path(@category)
+	when /^the list of tickets$/
+	tickets_path
+    when /^the show ticket$/
+	ticket_path(@ticket)
+    when /^the edit ticket page$/
+	edit_ticket_path(@ticket)
     when /^the list of emails$/
 	emails_path
     when /^the show email$/

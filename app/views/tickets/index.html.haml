@@ -1,0 +1,31 @@
+%h1  Tickets#index
+-#Find me in app/views/tickets/index.html.erb
+%table#tickets
+ %thead
+  %th  id
+  %th  requestor
+  %th  phone
+  %th  ru
+  %th  email
+  %th  room
+  %th  subject
+  %th  description
+  %th  location_id
+  %th  ticket_category_id
+  
+ %tbody
+ - @tickets.each do |ticket|
+  %tr
+   %td= ticket.id
+   %td= ticket.requestor
+   %td= ticket.phone
+   %td= ticket.ru
+   %td= ticket.email
+   %td= ticket.room
+   %td= ticket.subject
+   %td= ticket.description
+   %td= ticket.location_id
+   %td= ticket.ticket_category_id
+   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
+   %td= link_to 'Delete', ticket_path(ticket), :method => :delete
+= link_to 'Create ticket', new_ticket_path
