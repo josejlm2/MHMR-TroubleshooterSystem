@@ -6,7 +6,7 @@ I want to be able to edit an email in the email table
 Scenario: edit Email
 Given I have a email name jack@yahoo.com
 And I am on the edit email page
-And I fill in "email" with "erick@yahoo.com"
-And I press "save changes"
+And I fill in "email_email_address" with "erick@yahoo.com"
+And I press "Save Changes"
 Then I should see "erick@yahoo.com"
 
