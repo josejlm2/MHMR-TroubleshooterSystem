@@ -21,12 +21,21 @@ module NavigationHelpers
 	category_path(@category)
     when /^the edit category page$/
 	edit_category_path(@category)
+<<<<<<< HEAD
 	when /^the list of tickets$/
 	tickets_path
     when /^the show ticket$/
 	ticket_path(@ticket)
     when /^the edit ticket page$/
 	edit_ticket_path(@ticket)
+=======
+    when /^the list of emails$/
+	emails_path
+    when /^the show email$/
+	email_path(@email)
+    when /^the edit email page$/
+	edit_email_path(@email)
+>>>>>>> 5998aa1634d7665e756c360e8644482005e4b2ef
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -8,22 +8,36 @@ development:
 #  database: db/development.postgresql
   pool: 5
   timeout: 5000
+<<<<<<< HEAD
   #username: myapp
   #password: 
+=======
+#  username: myapp
+#  password: 
+>>>>>>> 5998aa1634d7665e756c360e8644482005e4b2ef
 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 
+<<<<<<< HEAD
 test: &test
+=======
+test: &test 
+>>>>>>> 5998aa1634d7665e756c360e8644482005e4b2ef
   adapter: postgresql
   encoding: unicode
   database: my_database_test
 #  database: db/test.postgresql
   pool: 5
+<<<<<<< HEAD
   #username: myapp
   #password: 
+=======
+#  username: myapp
+#  password: 
+>>>>>>> 5998aa1634d7665e756c360e8644482005e4b2ef
   
 production:
   adapter: postgresql
