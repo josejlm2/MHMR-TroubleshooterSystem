@@ -1,17 +1,6 @@
 MhmrTroubleshooter::Application.routes.draw do
-  get "locations/index"
-
-  get "locations/create"
-
-  get "locations/new"
-
-  get "locations/edit"
-
-  get "locations/update"
-
-  get "locations/destroy"
-
   resources :emails # , except:[:show]
+  devise_for :users
   resources :categories
   resources :tickets
   resources :locations
