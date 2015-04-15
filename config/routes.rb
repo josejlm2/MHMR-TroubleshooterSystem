@@ -1,4 +1,6 @@
 MhmrTroubleshooter::Application.routes.draw do
+  devise_for :users
+
   resources :categories
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'categories#index'

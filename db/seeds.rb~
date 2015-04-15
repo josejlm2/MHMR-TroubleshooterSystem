@@ -6,5 +6,3 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 category = Category.create(name: 'cars')
-
-user = User.create(email: 'name@name.com', password: 'password1', password_confirmation: 'password1')
