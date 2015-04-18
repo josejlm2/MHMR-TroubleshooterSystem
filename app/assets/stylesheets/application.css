@@ -12,3 +12,23 @@
  *= require purecss
  *= require_tree .
  */
+
+.page-header{
+  background-color: #0066ff;
+  height: 150px;
+}
+
+.page-title{
+  background-color: #cacad4;
+  margin-bottom: 30px;
+}
+
+.content{
+  border: 1px solid #000;
+}
+
+.navbar{
+  margin-bottom: 30px;
+  border: 1px solid #000;
+}
+
