@@ -3,6 +3,7 @@
 -#Find me in app/views/tickets/index.html.erb
 %table#tickets.pure-table.pure-table-bordered
  %thead
+  %th  subject
   %th  status
   %th  view
   %th  edit
@@ -13,7 +14,6 @@
   %th  ru
   %th  email
   %th  room
-  %th  subject
   %th  description
   %th  location_id
   %th  ticket_category_id
@@ -21,6 +21,7 @@
  %tbody
  - @tickets.each do |ticket|
   %tr{:class => cycle('','pure-table-odd')}
+  %td= ticket.subject
   %td= select_tag(:status,options_for_select(@status_options)) 	
   %td= "view button"
   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
@@ -31,7 +32,6 @@
   %td= ticket.ru
   %td= ticket.email
   %td= ticket.room
-  %td= ticket.subject
   %td= ticket.description
   %td= ticket.location_id
   %td= ticket.ticket_category_id

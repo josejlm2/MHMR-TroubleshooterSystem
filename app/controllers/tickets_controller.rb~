@@ -6,7 +6,6 @@ class TicketsController < ApplicationController
   end
   
   def select
-	@ticket = Ticket.find(params[:id])
         @status = Ticket.status
   end
 
