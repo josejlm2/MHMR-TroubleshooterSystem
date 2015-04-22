@@ -1,6 +1,10 @@
 = content_for(:title, "Tickets")
 
 -#Find me in app/views/tickets/index.html.erb
+
+%span.details.table
+.logs.pagination
+ =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
   %th  view
@@ -28,7 +32,7 @@
    %td= ticket.phone
    %td= ticket.ru
    %td= ticket.email
-   %td= ticket.room
+   %td= ticket.room 
    %td= ticket.subject
    %td= ticket.description
    %td= ticket.location_id
