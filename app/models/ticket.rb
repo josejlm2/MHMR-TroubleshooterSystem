@@ -1,5 +1,6 @@
 class Ticket < ActiveRecord::Base
-  
+   belongs_to :location
+   belongs_to :category
    attr_accessible :requestor
    attr_accessible :phone
    attr_accessible :ru

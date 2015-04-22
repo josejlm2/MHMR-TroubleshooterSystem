@@ -32,7 +32,20 @@
   border: 1px solid #000;
 }
 
-
 #tickets{
   width: 100%;
 }
+
+.newticket{
+    margin:12px 0;
+    float:left;
+}
+
+.pagination {
+  .previous_page { background:#7777ff; color:white }
+  .previous_page.disabled { background: white; color: #777 }
+  .current { background: yellow }
+  .next_page { background: #7777ff; color: white }
+  .next_page.disabled { background: white; color: #777 }
+}
+

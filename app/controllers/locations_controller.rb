@@ -15,6 +15,7 @@ class LocationsController < ApplicationController
 
   def new
     @location = Location.new
+	@location.tickets.build
   end
 
   def edit
