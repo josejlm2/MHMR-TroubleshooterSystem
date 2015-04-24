@@ -10,17 +10,18 @@
   %th  View
   %th  Edit
   %th  Delete
+  %th  Task
   %th  Status
-  %th  ID
+  %th  Submitted
   %th  Subject
+  %th  Description
+  %th  Category
+  %th  Location
+  %th  Room
   %th  Requestor
   %th  Phone
-  %th  RU
   %th  Email
-  %th  Room
-  %th  Location
-  %th  Category
-  %th  Description
+  %th  RU
   
  %tbody
  - @tickets.each do |ticket|
@@ -28,15 +29,16 @@
    %td= "view button"
    %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
    %td= link_to 'Delete', ticket_path(ticket), :method => :delete
+   %td= ticket.id
    %td= Status.find(ticket.status_id).name
    %td= ticket.id
    %td= ticket.subject
+   %td= ticket.description
+   %td= Category.find(ticket.ticket_category_id).name
+   %td= Location.find(ticket.location_id).name 
+   %td= ticket.room 
    %td= ticket.requestor
    %td= ticket.phone
-   %td= ticket.ru
    %td= ticket.email
-   %td= ticket.room 
-   %td= Location.find(ticket.location_id).name
-   %td= Category.find(ticket.ticket_category_id).name
-   %td= ticket.description
+   %td= ticket.ru
 = link_to 'Create ticket', new_ticket_path
