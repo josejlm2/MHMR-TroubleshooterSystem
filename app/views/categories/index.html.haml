@@ -1,6 +1,6 @@
 %h1  Categories#index
 -#Find me in app/views/categories/index.html.erb
-%table#categories
+%table#categories.pure-table.pure-table-bordered
  %thead
   %th  id
   %th  name
@@ -8,7 +8,7 @@
   %th  delete
  %tbody
  - @categories.each do |category|
-  %tr
+  %tr{:class => cycle('','pure-table-odd')}
    %td= category.id
    %td= category.name
    %td= link_to 'Edit Info', edit_category_path(category), :method => :get
