@@ -1,0 +1,9 @@
+<h1>Categories#edit</h1>
+<p>Find me in app/views/categories/edit.html.erb</p>
+%h2 edit Category
+-#if able to figure out hwo to use UI helpers use moive_path(@movie)
+= form_tag category_path(@category), :method => :put do
+ = label :category, :name, 'Category Name'
+ = text_field :category, :name
+ = submit_tag 'save changes'
+= link_to 'back to category list', categories_path

@@ -1,12 +1,9 @@
 = content_for(:title, "Tickets")
 
 -#Find me in app/views/tickets/index.html.erb
-
-%span.details.table
-.logs.pagination
- =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
+  %th  subject
   %th  status
   %th  view
   %th  edit
@@ -17,7 +14,6 @@
   %th  ru
   %th  email
   %th  room
-  %th  subject
   %th  description
   %th  location_id
   %th  ticket_category_id
@@ -25,21 +21,7 @@
  %tbody
  - @tickets.each do |ticket|
   %tr{:class => cycle('','pure-table-odd')}
-<<<<<<< HEAD
-   %td= "view button"
-   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
-   %td= link_to 'Delete', ticket_path(ticket), :method => :delete
-   %td= ticket.id
-   %td= ticket.requestor
-   %td= ticket.phone
-   %td= ticket.ru
-   %td= ticket.email
-   %td= ticket.room 
-   %td= ticket.subject
-   %td= ticket.description
-   %td= ticket.location_id
-   %td= ticket.ticket_category_id
-=======
+  %td= ticket.subject
   %td= select_tag(:status,options_for_select(@status_options)) 	
   %td= "view button"
   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
@@ -50,9 +32,7 @@
   %td= ticket.ru
   %td= ticket.email
   %td= ticket.room
-  %td= ticket.subject
   %td= ticket.description
   %td= ticket.location_id
   %td= ticket.ticket_category_id
->>>>>>> 4983bed392bca46a2c2fd2f82099fa547651fc5e
 = link_to 'Create ticket', new_ticket_path
