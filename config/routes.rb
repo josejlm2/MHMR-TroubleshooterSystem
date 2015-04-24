@@ -1,19 +1,12 @@
 MhmrTroubleshooter::Application.routes.draw do
-  get "locations/index"
-
-  get "locations/create"
-
-  get "locations/new"
-
-  get "locations/edit"
-
-  get "locations/update"
-
-  get "locations/destroy"
-
-  resources :emails # , except:[:show]
+  resources :emails 
   resources :categories
-  resources :tickets
+  resources :tickets do
+   collection do
+	get 'summary'
+	get 'findByRange'
+	end
+  end
   resources :locations
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'
