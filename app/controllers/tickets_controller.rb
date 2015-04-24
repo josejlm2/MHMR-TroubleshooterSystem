@@ -1,10 +1,11 @@
 class TicketsController < ApplicationController
   def index
-	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
-	respond_to do |format|
-		format.html
-		format.json { render json: @tickets }
-	end
+        @tickets = Ticket.all
+	#@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
+	#respond_to do |format|
+	#	format.html
+	#	format.json { render json: @tickets }
+	#end
   end       
   
 

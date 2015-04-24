@@ -2,15 +2,15 @@
 
 -#Find me in app/views/tickets/index.html.erb
 
-%span.details.table
-.logs.pagination
- =will_paginate
+-#%span.details.table
+-#.logs.pagination
+-# =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
   %th  View
   %th  Edit
   %th  Delete
-  %th  Task #
+  %th  Task#
   %th  Status
   %th  Submitted
   %th  Subject
