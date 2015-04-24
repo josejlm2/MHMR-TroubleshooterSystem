@@ -7,7 +7,7 @@
   %th  edit
   %th  delete
  %tbody
- - @statuses.each do |status|
+ - @status.each do |status|
   %tr
    %td= status.id
    %td= status.name

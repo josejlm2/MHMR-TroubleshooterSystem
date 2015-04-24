@@ -1,6 +1,5 @@
 <h1>Tickets#edit</h1>
-<p>Find me in app/views/tickets/edit.html.erb</p>
-%h2 edit Ticket
+%h2 Edit Ticket
 = form_tag ticket_path(@ticket), :method => :put do
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body

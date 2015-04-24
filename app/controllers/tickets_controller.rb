@@ -31,11 +31,12 @@ class TicketsController < ApplicationController
   end
   def edit
 	@ticket = Ticket.find(params[:id])
+	
   end
   def update
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
-		redirect_to tickets_path(@ticket)
+		redirect_to tickets_path
 	else
 		render('index')
 	end
