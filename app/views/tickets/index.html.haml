@@ -7,7 +7,6 @@
  =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
-  %th  status
   %th  view
   %th  edit
   %th  delete
@@ -25,7 +24,6 @@
  %tbody
  - @tickets.each do |ticket|
   %tr{:class => cycle('','pure-table-odd')}
-<<<<<<< HEAD
    %td= "view button"
    %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
    %td= link_to 'Delete', ticket_path(ticket), :method => :delete
@@ -39,20 +37,4 @@
    %td= ticket.description
    %td= ticket.location_id
    %td= ticket.ticket_category_id
-=======
-  %td= select_tag(:status,options_for_select(@status_options)) 	
-  %td= "view button"
-  %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
-  %td= link_to 'Delete', ticket_path(ticket), :method => :delete
-  %td= ticket.id
-  %td= ticket.requestor
-  %td= ticket.phone
-  %td= ticket.ru
-  %td= ticket.email
-  %td= ticket.room
-  %td= ticket.subject
-  %td= ticket.description
-  %td= ticket.location_id
-  %td= ticket.ticket_category_id
->>>>>>> 4983bed392bca46a2c2fd2f82099fa547651fc5e
 = link_to 'Create ticket', new_ticket_path

@@ -1,18 +1,14 @@
 class TicketsController < ApplicationController
   def index
-<<<<<<< HEAD
 	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
 	respond_to do |format|
 		format.html
 		format.json { render json: @tickets }
 	end
-=======
-	@tickets = Ticket.all
-        @status_options = ['','Not Started','In Progress','Closed']
-        
->>>>>>> 4983bed392bca46a2c2fd2f82099fa547651fc5e
-  end
+ 	@status_options = ['','Not Started','In Progress','Closed']
+  end       
   
+
   def select
 	@ticket = Ticket.find(params[:id])
         @status = Ticket.status
