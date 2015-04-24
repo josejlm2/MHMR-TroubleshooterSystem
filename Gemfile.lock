@@ -255,7 +255,7 @@ GEM
     ruby-progressbar (1.7.5)
     ruby_parser (3.6.5)
       sexp_processor (~> 4.1)
-    sass (3.4.13)
+    sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -321,6 +321,7 @@ DEPENDENCIES
   rails_12factor
   rspec
   rspec-rails (= 2.14)
+  sass (~> 3.2.5)
   sass-rails (~> 3.2.3)
   simplecov
   uglifier (>= 1.0.3)

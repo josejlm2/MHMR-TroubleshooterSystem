@@ -23,7 +23,8 @@ gem 'haml'
 # in production environments by default.
 group :assets do
   gem 'will_paginate', '~> 3.0.6'
-  gem 'sass-rails', '~> 4.0.0'
+  gem "sass", "~> 3.2.5"
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
