@@ -7,17 +7,17 @@
  =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
-  #%th  status
   %th  view
   %th  edit
   %th  delete
+  %th  Status
   %th  id
+  %th  subject
   %th  requestor
   %th  phone
   %th  ru
   %th  email
   %th  room
-  %th  subject
   %th  description
   %th  location_id
   %th  ticket_category_id
@@ -25,18 +25,18 @@
  %tbody
  - @tickets.each do |ticket|
   %tr{:class => cycle('','pure-table-odd')}
-  #%td= select_tag(:status,options_for_select(@status_options)) 	
-  %td= "view button"
-  %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
-  %td= link_to 'Delete', ticket_path(ticket), :method => :delete
-  %td= ticket.id
-  %td= ticket.requestor
-  %td= ticket.phone
-  %td= ticket.ru
-  %td= ticket.email
-  %td= ticket.room
-  %td= ticket.subject
-  %td= ticket.description
-  %td= ticket.location_id
-  %td= ticket.ticket_category_id
+   %td= "view button"
+   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
+   %td= link_to 'Delete', ticket_path(ticket), :method => :delete
+   %td= Status.find(ticket.status_id).name
+   %td= ticket.id
+   %td= ticket.subject
+   %td= ticket.requestor
+   %td= ticket.phone
+   %td= ticket.ru
+   %td= ticket.email
+   %td= ticket.room 
+   %td= ticket.description
+   %td= ticket.location_id
+   %td= ticket.ticket_category_id
 = link_to 'Create ticket', new_ticket_path

@@ -7,19 +7,20 @@
  =will_paginate
 %table#tickets.pure-table.pure-table-bordered
  %thead
-  %th  view
-  %th  edit
-  %th  delete
-  %th  id
-  %th  requestor
-  %th  phone
-  %th  ru
-  %th  email
-  %th  room
-  %th  subject
-  %th  description
-  %th  location_id
-  %th  ticket_category_id
+  %th  View
+  %th  Edit
+  %th  Delete
+  %th  Status
+  %th  ID
+  %th  Subject
+  %th  Requestor
+  %th  Phone
+  %th  RU
+  %th  Email
+  %th  Room
+  %th  Description
+  %th  Location
+  %th  Category
   
  %tbody
  - @tickets.each do |ticket|
@@ -27,13 +28,14 @@
    %td= "view button"
    %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
    %td= link_to 'Delete', ticket_path(ticket), :method => :delete
+   %td= Status.find(ticket.status_id).name
    %td= ticket.id
+   %td= ticket.subject
    %td= ticket.requestor
    %td= ticket.phone
    %td= ticket.ru
    %td= ticket.email
    %td= ticket.room 
-   %td= ticket.subject
    %td= ticket.description
    %td= ticket.location_id
    %td= ticket.ticket_category_id

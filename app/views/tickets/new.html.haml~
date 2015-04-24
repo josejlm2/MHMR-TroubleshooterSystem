@@ -1,7 +1,6 @@
-<h1>Tickets#edit</h1>
-<p>Find me in app/views/tickets/edit.html.erb</p>
-%h2 edit Ticket
-= form_tag ticket_path(@ticket), :method => :put do
+<h1> Create New Ticket </h1>
+%p
+= form_tag tickets_path, :method => :post do
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :requestor, 'Ticket Requestor' 
@@ -42,13 +41,11 @@
    = label :ticket, :ticket_category_id, 'Ticket Category'
   .modal-body
    = collection_select(:ticket, :ticket_category_id, Category.all, :id, :name)
-
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
-   = label :ticket, :status_id, 'Ticket Status'
+   = label :ticket, :ticket_status_id, 'Ticket Status'
   .modal-body
-   = collection_select(:ticket, :status_id, Status.all, :id, :name)
-
+   = collection_select(:ticket, :ticket_status_id, Status.all, :id, :name)
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-body
    = label :ticket, :description, 'Description'
@@ -58,4 +55,4 @@
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-footer
    = submit_tag 'Save Changes'
-= link_to 'back to ticket list', tickets_path
+  

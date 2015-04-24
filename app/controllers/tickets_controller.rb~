@@ -6,8 +6,9 @@ class TicketsController < ApplicationController
 		format.json { render json: @tickets }
 	end
  	@status_options = ['','Not Started','In Progress','Closed']
-       
-         
+  end       
+  
+
   def select
 	@ticket = Ticket.find(params[:id])
         @status = Ticket.status

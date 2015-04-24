@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
  def index
-	@status = Status.all
+	@statuses = Status.all
   end
 
 
@@ -29,7 +29,7 @@ class StatusesController < ApplicationController
   def update
 	@status = Status.find(params[:id])
 	if @status.update_attributes(params[:status])
-		redirect_to categories_path(@status)
+		redirect_to statuses_path(@status)
 	else
 		render('index')
 	end
@@ -40,6 +40,6 @@ class StatusesController < ApplicationController
   def destroy
   	@status = Status.find(params[:id])
 	@status.destroy
-	redirect_to categories_path
+	redirect_to statuses_path
   end
 end

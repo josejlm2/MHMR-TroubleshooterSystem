@@ -5,7 +5,6 @@ class TicketsController < ApplicationController
 		format.html
 		format.json { render json: @tickets }
 	end
- 	@status_options = ['','Not Started','In Progress','Closed']
   end       
   
 

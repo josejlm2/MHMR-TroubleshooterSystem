@@ -29,7 +29,7 @@ class StatusesController < ApplicationController
   def update
 	@status = Status.find(params[:id])
 	if @status.update_attributes(params[:status])
-		redirect_to statuses_path(@status)
+		redirect_to statuses_path(@statuses)
 	else
 		render('index')
 	end
