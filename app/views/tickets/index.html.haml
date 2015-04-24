@@ -18,9 +18,9 @@
   %th  RU
   %th  Email
   %th  Room
-  %th  Description
   %th  Location
   %th  Category
+  %th  Description
   
  %tbody
  - @tickets.each do |ticket|
@@ -36,7 +36,7 @@
    %td= ticket.ru
    %td= ticket.email
    %td= ticket.room 
+   %td= Location.find(ticket.location_id).name
+   %td= Category.find(ticket.ticket_category_id).name
    %td= ticket.description
-   %td= ticket.location_id
-   %td= ticket.ticket_category_id
 = link_to 'Create ticket', new_ticket_path
