@@ -1,0 +1,18 @@
+%h1  Users#index
+-#Find me in app/views/users/index.html.erb
+%table#users
+ %thead
+  %th  id
+  %th  email
+  %th  password
+  %th  edit
+  %th  delete
+ %tbody
+ - @users.each do |user|
+  %tr
+   %td= user.id
+   %td= user.email
+   %td= user.password
+   %td= link_to 'Edit Info', edit_user_path(user), :method => :get
+   %td= link_to 'Delete', user_path(user), :method => :delete
+= link_to 'Create user', 'users/sign_up'
