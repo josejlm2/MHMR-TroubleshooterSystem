@@ -1,8 +1,7 @@
 class UserController < ApplicationController
-  load_and_authorize_resource
   
   def index
-    @users = User.excludes(:id => current_user.id)
+    @users = User.all
   end
 
   def new
@@ -33,6 +32,10 @@ class UserController < ApplicationController
     else
       render :action => 'edit'
     end
+  end
+
+  def delete
+    @user = User.find(params[:id])
   end
 
   def destroy

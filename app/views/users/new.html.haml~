@@ -1,0 +1,8 @@
+<h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p>
+%h2 Create New User
+
+= form_tag users_path, :method => :post do
+ = label :user, :email, password, 'User Email Password'
+ = text_field :user, :email, :password
+ = submit_tag 'Save Changes'
