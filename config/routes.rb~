@@ -1,6 +1,4 @@
 MhmrTroubleshooter::Application.routes.draw do
-
-
   resources :emails # , except:[:show]
   resources :categories
   resources :tickets
