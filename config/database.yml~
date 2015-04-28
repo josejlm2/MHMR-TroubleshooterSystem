@@ -8,7 +8,7 @@ development:
 #  database: db/development.postgresql
   pool: 5
   timeout: 5000
-  username: rizzox
+  username: myapp
   password: 
 
 
@@ -22,7 +22,7 @@ test: &test
   database: my_database_test
 #  database: db/test.postgresql
   pool: 5
-  username: rizzox
+  username: myapp
   password: 
   
 production:
@@ -30,7 +30,7 @@ production:
   database: my_database_production
 #  database: db/production.postgresql
   timeout: 5000
-  username: rizzox
+  username: myapp
   password: 
   
 cucumber:
