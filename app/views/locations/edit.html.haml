@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-<h1>Locations#edit</h1>
-<p>Find me in app/views/locations/edit.html.erb</p>
-%h2 Edit Location 
-= form_tag location_path(@location), :method => :put do
-=======
+
 =content_for(:title, "Edit Location")
 
 = form_tag location_path(@location), :method => :put, :class => "pure-form pure-form-stacked" do
->>>>>>> 26fd75fa4cafb2aa0eb7bf083af3dc9af843cc82
  = label :location, :name, 'Location Name'
  = text_field :location, :name
  = submit_tag 'Edit Location', :class => "pure-button pure-button-primary"
