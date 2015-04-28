@@ -2,9 +2,6 @@
 
 -#Find me in app/views/tickets/index.html.erb
 
-%span.details.table
-.logs.pagination
- =will_paginate
 
 %table#tickets.pure-table.pure-table-bordered
  %thead

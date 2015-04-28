@@ -10,7 +10,7 @@
   .modal-body
    = label :ticket, :phone, 'Phone Number' 
   .modal-body
-   = phone_field :ticket, :phone
+   = text_field :ticket, :phone
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :ru, 'Ticket RU'
@@ -20,7 +20,7 @@
   .modal-body
    = label :ticket, :email, 'Email'
   .modal-body
-   = email_field :ticket, :email
+   = text_field :ticket, :email
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :room, 'Room'
@@ -45,7 +45,7 @@
   .modal-body
    = label :ticket, :ticket_status_id, 'Ticket Status'
   .modal-body
-   = collection_select(:ticket, :status_id, Status.all, :id, :name)
+   = collection_select(:ticket, :ticket_status_id, Status.all, :id, :name)
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-body
    = label :ticket, :description, 'Description'

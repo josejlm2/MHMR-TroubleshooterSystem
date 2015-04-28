@@ -1,0 +1,7 @@
+<h1>Status#new</h1>
+%h2 Create New Status
+
+= form_tag statuses_path, :method => :post do
+ = label :status, :name, 'Status Name'
+ = text_field :status, :name
+ = submit_tag 'Save Changes'
