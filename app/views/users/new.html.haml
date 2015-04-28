@@ -2,7 +2,7 @@
 <p>Find me in app/views/users/new.html.erb</p>
 %h2 Create New User
 
-= form_tag user_path, :method => :post do
+= form_tag users_path, :method => :post do
  = label :user, :email, 'User Email'
  = email_field :user, :email
  = label :user, :password, 'User Password'
