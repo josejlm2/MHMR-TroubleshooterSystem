@@ -1,16 +1,14 @@
-%h1  Categories#index
--#Find me in app/views/categories/index.html.erb
+= content_for(:title, "Categories")
+
 %table#categories.pure-table.pure-table-bordered
  %thead
-  %th  id
-  %th  name
-  %th  edit
-  %th  delete
+  %th  Edit
+  %th  Delete
+  %th  Name
  %tbody
  - @categories.each do |category|
   %tr{:class => cycle('','pure-table-odd')}
-   %td= category.id
-   %td= category.name
    %td= link_to 'Edit Info', edit_category_path(category), :method => :get
    %td= link_to 'Delete', category_path(category), :method => :delete
+   %td= category.name
 = link_to 'Create category', new_category_path
