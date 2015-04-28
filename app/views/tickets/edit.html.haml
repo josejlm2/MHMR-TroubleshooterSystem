@@ -1,6 +1,4 @@
-<h1>Tickets#edit</h1>
-<p>Find me in app/views/tickets/edit.html.erb</p>
-%h2 edit Ticket
+= content_for(:title, "Edit Tickets")
 = form_tag ticket_path(@ticket), :method => :put do
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
@@ -42,6 +40,13 @@
    = label :ticket, :ticket_category_id, 'Ticket Category'
   .modal-body
    = collection_select(:ticket, :ticket_category_id, Category.all, :id, :name)
+
+ %div.pure-u-md-1-2.pure-u-1.newticket
+  .modal-body
+   = label :ticket, :status_id, 'Ticket Status'
+  .modal-body
+   = collection_select(:ticket, :status_id, Status.all, :id, :name)
+
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-body
    = label :ticket, :description, 'Description'

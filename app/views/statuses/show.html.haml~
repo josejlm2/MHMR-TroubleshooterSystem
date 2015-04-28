@@ -1,0 +1,5 @@
+<h1>Categories#show</h1>
+<p>Find me in app/views/categories/show.html.erb</p>
+%p Category name is
+= @category.name
+= link_to 'List of categories', categories_path

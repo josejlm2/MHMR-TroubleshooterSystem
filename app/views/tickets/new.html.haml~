@@ -45,7 +45,7 @@
   .modal-body
    = label :ticket, :ticket_status_id, 'Ticket Status'
   .modal-body
-   = collection_select(:ticket, :status_id, Status.all, :id, :name)
+   = collection_select(:ticket, :ticket_status_id, Status.all, :id, :name)
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-body
    = label :ticket, :description, 'Description'
