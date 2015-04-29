@@ -1,15 +1,15 @@
-<h1>Emails#index</h1>
-<p>Find me in app/views/emails/index.html.erb</p>
-%table#emails
+= content_for(:title, "Emails")
+
+%table#emails.pure-table.pure-table-bordered
  %thead
-  %th id
-  %th email
+  %th Edit
+  %th Delete
+  %th Email
  %tbody
  - @emails.each do |email|
   %tr
-   %td= email.id
-   %td= email.email_address
    %td= link_to 'Edit Info', edit_email_path(email), :method => :get
    %td= link_to 'Delete', email_path(email), :method => :delete
+   %td= email.email_address
 = link_to 'Create Email', new_email_path
 

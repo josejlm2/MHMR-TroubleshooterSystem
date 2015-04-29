@@ -19,9 +19,11 @@ gem 'pg'
 
 gem 'purecss-rails'
 gem 'haml'
+gem 'will_paginate', '~> 3.0.6'
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
+group :assets do  
+  gem "sass", "~> 3.2.5"
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 

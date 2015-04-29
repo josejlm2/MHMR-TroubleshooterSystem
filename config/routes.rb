@@ -8,6 +8,8 @@ MhmrTroubleshooter::Application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
   resources :users
+  resources :statuses
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'
   # The priority is based upon order of creation:

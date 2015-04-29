@@ -1,31 +1,45 @@
-%h1  Tickets#index
+= content_for(:title, "Tickets")
+
 -#Find me in app/views/tickets/index.html.erb
-%table#tickets
+
+%span.details.table
+.logs.pagination
+ =will_paginate
+
+%table#tickets.pure-table.pure-table-bordered
  %thead
-  %th  id
-  %th  requestor
-  %th  phone
-  %th  ru
-  %th  email
-  %th  room
-  %th  subject
-  %th  description
-  %th  location_id
-  %th  ticket_category_id
+  %th  View
+  %th  Edit
+  %th  Delete
+  %th  Task#
+  %th  Status
+  %th  Submitted
+  %th  Subject
+  %th  Description
+  %th  Category
+  %th  Location
+  %th  Room
+  %th  Requestor
+  %th  Phone
+  %th  Email
+  %th  RU
   
  %tbody
  - @tickets.each do |ticket|
-  %tr
+  %tr{:class => cycle('','pure-table-odd')}
+   %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32")
+   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get
+   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32"), ticket_path(ticket), :method => :delete
    %td= ticket.id
-   %td= ticket.requestor
-   %td= ticket.phone
-   %td= ticket.ru
-   %td= ticket.email
-   %td= ticket.room
+   %td= Status.find(ticket.status_id).name
+   %td= ticket.id
    %td= ticket.subject
    %td= ticket.description
-   %td= ticket.location_id
-   %td= ticket.ticket_category_id
-   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
-   %td= link_to 'Delete', ticket_path(ticket), :method => :delete
+   %td= Category.find(ticket.ticket_category_id).name
+   %td= Location.find(ticket.location_id).name
+   %td= ticket.room 
+   %td= ticket.requestor
+   %td= ticket.phone
+   %td= ticket.email
+   %td= ticket.ru
 = link_to 'Create ticket', new_ticket_path

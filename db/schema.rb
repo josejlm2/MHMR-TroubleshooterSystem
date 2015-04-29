@@ -29,20 +29,29 @@ ActiveRecord::Schema.define(:version => 20150429001656) do
     t.string "name"
   end
 
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "ticket_categories", :force => true do |t|
     t.string "name"
   end
 
   create_table "tickets", :force => true do |t|
-    t.string  "requestor"
-    t.string  "phone"
-    t.integer "ru"
-    t.string  "email"
-    t.string  "room"
-    t.string  "subject"
-    t.text    "description"
-    t.integer "location_id"
-    t.integer "ticket_category_id"
+    t.string   "requestor"
+    t.string   "phone"
+    t.integer  "ru"
+    t.string   "email"
+    t.string   "room"
+    t.string   "subject"
+    t.text     "description"
+    t.integer  "location_id"
+    t.integer  "ticket_category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+	t.integer "status_id"
   end
 
   create_table "users", :force => true do |t|

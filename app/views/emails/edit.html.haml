@@ -1,8 +1,8 @@
-<h1>Emails#edit</h1>
-<p>Find me in app/views/emails/edit.html.erb</p>
-%h2 edit Email
-= form_tag email_path(@email), :method => :put do
+=content_for(:title, "Edit Email")
+
+
+= form_tag email_path(@email), :method => :put, :class => "pure-form pure-form-stacked" do
  = label :email, :email_address, 'Email'
  = email_field :email, :email_address
- = submit_tag 'Save Changes'
+ = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
 = link_to 'back to email list', emails_path
