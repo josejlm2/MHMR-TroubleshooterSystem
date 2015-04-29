@@ -13,4 +13,4 @@
    %td= status.name
    %td= link_to 'Edit Info', edit_status_path(status), :method => :get
    %td= link_to 'Delete', status_path(status), :method => :delete
-= link_to 'Create status', new_status_path
+= link_to 'Create Status', new_status_path

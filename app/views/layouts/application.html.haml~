@@ -27,7 +27,7 @@
         %span
       #menu
         .pure-menu
-          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button pure-img")
+          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button")
           %ul.pure-menu-list
             %li.pure-menu-item
               = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}

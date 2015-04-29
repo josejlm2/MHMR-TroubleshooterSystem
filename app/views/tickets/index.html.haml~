@@ -2,6 +2,14 @@
 
 -#Find me in app/views/tickets/index.html.erb
 
+%span.details.table
+.logs.pagination
+ =will_paginate
+
+.pure-g
+ .pure-u-1-3
+  %p 
+   = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_ticket_path 
 
 %table#tickets.pure-table.pure-table-bordered
  %thead
@@ -24,19 +32,18 @@
  %tbody
  - @tickets.each do |ticket|
   %tr{:class => cycle('','pure-table-odd')}
-   %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32")
-   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get
-   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32"), ticket_path(ticket), :method => :delete
+   %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button")
+   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button"), edit_ticket_path(ticket), :method => :get
+   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button"), ticket_path(ticket), :method => :delete
    %td= ticket.id
    %td= Status.find(ticket.status_id).name
    %td= ticket.id
    %td= ticket.subject
    %td= ticket.description
-   %td= Category.find(ticket.ticket_category_id).name
+   %td= Category.find(ticket.category_id).name
    %td= Location.find(ticket.location_id).name
    %td= ticket.room 
    %td= ticket.requestor
    %td= ticket.phone
    %td= ticket.email
    %td= ticket.ru
-= link_to 'Create ticket', new_ticket_path

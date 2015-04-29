@@ -10,6 +10,6 @@ class Ticket < ActiveRecord::Base
    attr_accessible :subject
    attr_accessible :description
    attr_accessible :location_id
-   attr_accessible :ticket_category_id
+   attr_accessible :category_id
    attr_accessible :status_id
 end

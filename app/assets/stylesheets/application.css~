@@ -382,24 +382,21 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 }
 
 .pure-button-success {
-  background: rgb(28, 184, 65) !important; /* this is a green */
-  color: white !important;
-}
+            background: rgb(28, 184, 65); /* this is a green */
+        }
 
-.pure-button-error {
-  background: rgb(202, 60, 60) !important; /* this is a maroon */
-  color: white !important;
-}
+        .pure-button-error {
+            background: rgb(202, 60, 60) !important; /* this is a maroon */
+            text-color: white !important;
+        }
 
-.pure-button-warning {
-  background: rgb(223, 117, 20) !important; /* this is an orange */
-  color: white !important;
-}
+        .pure-button-warning {
+            background: rgb(223, 117, 20); /* this is an orange */
+        }
 
-.pure-button-secondary {
-  background: rgb(66, 184, 221)!important; /* this is a light blue */
-  color: white !important;
-}
+        .pure-button-secondary {
+            background: rgb(66, 184, 221); /* this is a light blue */
+        }
 
 
 @media (max-width: 47.999em) {
