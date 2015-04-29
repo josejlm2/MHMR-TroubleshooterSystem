@@ -1,7 +1,6 @@
-
 =content_for(:title, "Edit Location")
 
 = form_tag location_path(@location), :method => :put, :class => "pure-form pure-form-stacked" do
  = label :location, :name, 'Location Name'
  = text_field :location, :name
- = submit_tag 'Edit Location', :class => "pure-button pure-button-primary"
+ = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
