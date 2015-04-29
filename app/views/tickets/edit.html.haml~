@@ -1,6 +1,6 @@
 = content_for(:title, "Edit Ticket")
 %p
-=form_tag tickets_path(@ticket), :method => :put, :class => 'pure-form pure-form-stacked' do
+=form_tag ticket_path(@ticket), :method => :put, :class => 'pure-form pure-form-stacked' do
   %fieldset
     .pure-g
       %div.pure-u-md-1-2.pure-u-1.newticket
@@ -26,9 +26,9 @@
         = collection_select(:ticket, :location_id, Location.all, :id, :name)
       %div.pure-u-md-1-2.pure-u-1.newticket
         = label :ticket, :ticket_category_id, 'Ticket Category'
-        = collection_select(:ticket, :ticket_category_id, Category.all, :id, :name)
+        = collection_select(:ticket, :category_id, Category.all, :id, :name)
       %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :ticket_status_id, 'Ticket Status'
+        = label :ticket, :status_id, 'Ticket Status'
         = collection_select(:ticket, :status_id, Status.all, :id, :name)
       %div.pure-u-md-3-4.pure-u-1.newticket
         = label :ticket, :description, 'Description'

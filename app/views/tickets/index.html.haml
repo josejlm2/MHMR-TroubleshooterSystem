@@ -40,7 +40,7 @@
    %td= ticket.id
    %td= ticket.subject
    %td= ticket.description
-   %td= Category.find(ticket.ticket_category_id).name
+   %td= Category.find(ticket.category_id).name
    %td= Location.find(ticket.location_id).name
    %td= ticket.room 
    %td= ticket.requestor
