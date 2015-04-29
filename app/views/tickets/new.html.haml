@@ -2,38 +2,37 @@
 %p
 =form_tag tickets_path, :method => :post, :class => 'pure-form pure-form-stacked' do
   %fieldset
-    .pure-g
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :subject, 'Subject' 
-        = text_field :ticket, :subject 
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :requestor, 'Ticket Requestor' 
-        = text_field :ticket, :requestor 
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :phone, 'Phone Number' 
-        = phone_field :ticket, :phone
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :ru, 'Ticket RU'
-        = text_field :ticket, :ru 
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :email, 'Email'
-        = email_field :ticket, :email
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :room, 'Room'
-        = text_field :ticket, :room
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :location_id, 'Location'
-        = collection_select(:ticket, :location_id, Location.all, :id, :name)
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :category_id, 'Ticket Category'
-        = collection_select(:ticket, :category_id, Category.all, :id, :name)
-      %div.pure-u-md-1-2.pure-u-1.newticket
-        = label :ticket, :ticket_status_id, 'Ticket Status'
-        = collection_select(:ticket, :status_id, Status.all, :id, :name)
-      %div.pure-u-md-3-4.pure-u-1.newticket
-        = label :ticket, :description, 'Description'
-        = text_area :ticket, :description, :cols => "100", :rows => "10"
-      %div.pure-u-md-3-4.pure-u-1.newticket
-        = link_to "Back",tickets_path
-        %button.pure-button.pure-button-success{:type => "submit"} Create Ticket
-  
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :subject, 'Subject' 
+      = text_field :ticket, :subject 
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :requestor, 'Ticket Requestor' 
+      = text_field :ticket, :requestor 
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :phone, 'Phone Number' 
+      = phone_field :ticket, :phone
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :ru, 'Ticket RU'
+      = text_field :ticket, :ru 
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :email, 'Email'
+      = email_field :ticket, :email
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :room, 'Room'
+      = text_field :ticket, :room
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :location_id, 'Location'
+      = collection_select(:ticket, :location_id, Location.all, :id, :name)
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :category_id, 'Ticket Category'
+      = collection_select(:ticket, :category_id, Category.all, :id, :name)
+    %div.pure-u-md-1-2.pure-u-1.newticket
+      = label :ticket, :ticket_status_id, 'Ticket Status'
+      = collection_select(:ticket, :status_id, Status.all, :id, :name)
+    %div.pure-u-md-3-4.pure-u-1.newticket
+      = label :ticket, :description, 'Description'
+      = text_area :ticket, :description, :rows => "5", :class => "pure-u-1"
+    %div.pure-u-md-3-4.pure-u-1.newticket
+      = link_to "Back",tickets_path
+      %button.pure-button.pure-button-success{:type => "submit"} Create Ticket
+
