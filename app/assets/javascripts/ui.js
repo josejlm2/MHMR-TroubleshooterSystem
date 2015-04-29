@@ -1,3 +1,6 @@
+//Currently, this file is not being called properly by rails
+//menuLink.onclick() is not being attached as an js event
+//The js does not run all the way. It stops right before menuLink.onclick()
 (function (window, document) {
 
     var layout   = document.getElementById('layout'),
@@ -5,7 +8,9 @@
         menuLink = document.getElementById('menuLink');
     
 
+
     function toggleClass(element, className) {
+        alert("toogle function");
         
         var classes = element.className.split(/\s+/),
             length = classes.length,
@@ -24,8 +29,16 @@
 
         element.className = classes.join(' ');
     }
-    
-    menuLink.onclick = function (e) {
+   
+ 
+
+    $('menuLink').onclick(function (event) {
+      alert('Hooray!');
+      event.preventDefault(); // Prevent link from following its href
+    });
+ 
+
+      menuLink.onclick = function (e) {
         var active = 'active';
 
         e.preventDefault();
@@ -33,4 +46,5 @@
         toggleClass(menu, active);
         toggleClass(menuLink, active);
     };
+       
   }(this, this.document));
