@@ -3,6 +3,8 @@
 %h2 Create New User
 
 = form_tag users_path, :method => :post do
- = label :user, :email, password, 'User Email Password'
- = text_field :user, :email, :password
+ = label :user, :email, 'User Email'
+ = email_field :user, :email
+ = label :user, :password, 'User Password'
+ = password_field :user, :password
  = submit_tag 'Save Changes'

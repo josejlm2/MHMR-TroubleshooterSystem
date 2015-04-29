@@ -1,6 +1,6 @@
 MhmrTroubleshooter::Application.routes.draw do
   resources :emails # , except:[:show]
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
   resources :categories
   resources :tickets
   resources :locations

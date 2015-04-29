@@ -4,7 +4,6 @@
  %thead
   %th  id
   %th  email
-  %th  password
   %th  edit
   %th  delete
  %tbody
@@ -12,7 +11,6 @@
   %tr
    %td= user.id
    %td= user.email
-   %td= user.password
    %td= link_to 'Edit Info', edit_user_path(user), :method => :get
    %td= link_to 'Delete', user_path(user), :method => :delete
 = link_to 'Create user', new_user_path
