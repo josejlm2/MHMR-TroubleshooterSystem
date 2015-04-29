@@ -1,9 +1,13 @@
 %h1  Users#index
 -#Find me in app/views/users/index.html.erb
+-if !current_user.admin?
+ = render _root_path
 %table#users
  %thead
   %th  id
   %th  email
+  %th  admin
+  %th  manager
   %th  edit
   %th  delete
  %tbody
@@ -11,6 +15,8 @@
   %tr
    %td= user.id
    %td= user.email
+   %td= user.admin
+   %td= user.manager
    %td= link_to 'Edit Info', edit_user_path(user), :method => :get
    %td= link_to 'Delete', user_path(user), :method => :delete
 = link_to 'Create user', new_user_path

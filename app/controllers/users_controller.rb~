@@ -9,14 +9,8 @@ class UsersController < ApplicationController
   end
 
   def new
-    if current_user.admin?
-      @user = User.new
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    @user = User.new
   end
-
   def create
     if current_user.admin?
       @user = User.new(params[:user])
@@ -32,23 +26,12 @@ class UsersController < ApplicationController
       redirect_to root_path
     end
   end
-
   def show
-    if current_user.admin?
-      @user = User.find(params[:id])
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    @user = User.find(params[:id])
   end
 
   def edit
-    if current_user.admin?
-      @user = User.find(params[:id])
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    @user = User.find(params[:id])
   end
 
   def update
@@ -69,12 +52,7 @@ class UsersController < ApplicationController
   end
 
   def delete
-    if current_user.admin?
-      @user = User.find(params[:id])
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    @user = User.find(params[:id])
   end
 
   def destroy
