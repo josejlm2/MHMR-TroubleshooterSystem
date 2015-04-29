@@ -26,20 +26,20 @@
         %span
       #menu
         .pure-menu
-          %a.pure-menu-heading{:href => "#"} MHMR
+          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button pure-img")
           %ul.pure-menu-list
             %li.pure-menu-item
-              = link_to "Tickets", tickets_path, {:class => "pure-menu-link"}
+              = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Locations", locations_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               %a.pure-menu-link{:href => "#"} Users
             %li.pure-menu-item
-              %a.pure-menu-link{:href => "#"} Emails
+              = link_to "Emails", emails_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
-              %a.pure-menu-link{:href => "#"} Categories
+              = link_to "Categories", categories_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
-              %a.pure-menu-link{:href => "#"} Statuses
+              = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
       
 
 
