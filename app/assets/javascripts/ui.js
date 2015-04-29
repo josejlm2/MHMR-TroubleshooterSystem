@@ -3,8 +3,10 @@
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink');
+    alert("test");
 
     function toggleClass(element, className) {
+        alert("test");
         var classes = element.className.split(/\s+/),
             length = classes.length,
             i = 0;
@@ -22,7 +24,7 @@
 
         element.className = classes.join(' ');
     }
-   
+    
     menuLink.onclick = function (e) {
         var active = 'active';
 
