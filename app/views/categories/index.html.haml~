@@ -13,6 +13,6 @@
  %tbody
  - @categories.each do |category|
   %tr{:class => cycle('','pure-table-odd')}
-   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button"), edit_category_path(category), :method => :get
-   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button"), category_path(category), :method => :delete
+   %td= link_to 'Edit Info', edit_category_path(category), :method => :get
+   %td= link_to 'Delete', category_path(category), :method => :delete
    %td= category.name

@@ -1,6 +1,6 @@
 <h1>Status#edit</h1>
-%h2 edit Status
--#if able to figure out hwo to use UI helpers use moive_path(@movie)
+%h2 Edit Status
+-#if able to figure out how to use UI helpers use movie_path(@movie)
 = form_tag status_path(@status), :method => :put do
  = label :status, :name, 'Status Name'
  = text_field :status, :name
