@@ -4,6 +4,7 @@
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink');
     alert("test");
+
     function toggleClass(element, className) {
         alert("test");
         var classes = element.className.split(/\s+/),

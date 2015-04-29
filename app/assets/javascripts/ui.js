@@ -3,10 +3,10 @@
     var layout   = document.getElementById('layout'),
         menu     = document.getElementById('menu'),
         menuLink = document.getElementById('menuLink');
-    alert("test");
+    
 
     function toggleClass(element, className) {
-        alert("test");
+        
         var classes = element.className.split(/\s+/),
             length = classes.length,
             i = 0;
