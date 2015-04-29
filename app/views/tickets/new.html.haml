@@ -34,6 +34,6 @@
         = label :ticket, :description, 'Description'
         = text_area :ticket, :description, :cols => "100", :rows => "10"
       %div.pure-u-md-3-4.pure-u-1.newticket
-        %button.pure-button.pure-button-error{:method => :get} Cancel
+        = link_to "Back",tickets_path
         %button.pure-button.pure-button-success{:type => "submit"} Save
   
