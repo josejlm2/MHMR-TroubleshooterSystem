@@ -4,6 +4,7 @@ MhmrTroubleshooter::Application.routes.draw do
   resources :tickets
   resources :locations
   resources :statuses
+  resources :users
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'

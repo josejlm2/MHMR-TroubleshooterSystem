@@ -1,4 +1,4 @@
-= content_for(:title, "Edit Email")
+=content_for(:title, "Edit Email")
 
 = form_tag email_path(@email), :method => :put, :class => "pure-form pure-form-stacked" do
  = label :email, :email_address, 'Email'

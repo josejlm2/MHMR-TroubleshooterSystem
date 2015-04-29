@@ -35,6 +35,5 @@
         = text_area :ticket, :description, :cols => "100", :rows => "10"
       %div.pure-u-md-3-4.pure-u-1.newticket
         = link_to "Back",tickets_path
-        = button_to "New User", tickets_path, :class => "button", :method => :get
         %button.pure-button.pure-button-success{:type => "submit"} Save
   

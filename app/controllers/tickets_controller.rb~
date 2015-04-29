@@ -1,7 +1,7 @@
 class TicketsController < ApplicationController
   def index
         
-	@tickets = Ticket.paginate(:page => params[:page], :per_page => 2)
+	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
 	respond_to do |format|
 		format.html
 		format.json { render json: @tickets }
@@ -30,6 +30,7 @@ class TicketsController < ApplicationController
 		render('new')
 	end
   end
+
   def edit
 	@ticket = Ticket.find(params[:id])
 	
@@ -37,7 +38,7 @@ class TicketsController < ApplicationController
   def update
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
-		redirect_to tickets_path
+		redirect_to tickets_path(@ticket)
 	else
 		render('index')
 	end

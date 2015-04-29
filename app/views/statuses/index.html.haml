@@ -1,16 +1,18 @@
-%h1  Statuses#index
--#Find me in app/views/statuses/index.html.erb
-%table#statuses
+= content_for(:title, "Statuses")
+
+.pure-g
+ .pure-u-1-3
+  %p 
+   = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_status_path
+
+%table#statuses.pure-table.pure-table-bordered
  %thead
-  %th  id
-  %th  name
-  %th  edit
-  %th  delete
+  %th  Edit
+  %th  Delete
+  %th  Name
  %tbody
  - @status.each do |status|
-  %tr
-   %td= status.id
+  %tr{:class => cycle('','pure-table-odd')}
+   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button"), edit_status_path(status), :method => :get
+   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button"), status_path(status), :method => :delete
    %td= status.name
-   %td= link_to 'Edit Info', edit_status_path(status), :method => :get
-   %td= link_to 'Delete', status_path(status), :method => :delete
-= link_to 'Create Status', new_status_path

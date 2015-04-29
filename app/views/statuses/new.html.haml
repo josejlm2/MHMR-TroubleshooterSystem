@@ -1,7 +1,6 @@
-<h1>Status#new</h1>
-%h2 Create New Status
+= content_for(:title, "Create New Status")
 
-= form_tag statuses_path, :method => :post do
+= form_tag statuses_path, :method => :post, :class => "pure-form pure-form-stacked" do
  = label :status, :name, 'Status Name'
  = text_field :status, :name
- = submit_tag 'Save Changes'
+ = submit_tag 'Create Status', :class => "pure-button pure-button-success"
