@@ -57,6 +57,7 @@
           
           
         .content
+          %h2.content-subhead How to use this layout
           %div.pure-g
             %div.pure-u-md-1-24
               %div.pure-u-md-11-12.pure-u-1
