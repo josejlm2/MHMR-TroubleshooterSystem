@@ -7,7 +7,7 @@ So that I may add more categories
 Scenario: Create new Category
   Given I have no categories
   When I am on the list of categories
-  When I follow "Create category"
+  Given I click on create category
   And I fill in "Name" with "Electricity"
   And I press "Save Changes"
   Then I should see "Electricity"

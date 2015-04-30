@@ -17,4 +17,6 @@ Then /^I should have ([0-9]+) email$/ do |count|
 end
 
 
-
+Given /^I click on create email$/ do 
+	click_on('Add Button')
+end
