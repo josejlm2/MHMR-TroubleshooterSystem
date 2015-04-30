@@ -1,7 +1,7 @@
 =content_for(:title, "Edit Categories")
 
-= form_tag category_path(@category), :method => :put, :class => "pure-form pure-form-stacked" do
- = label :category, :name, 'Category Name'
- = text_field :category, :name
- = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
-= link_to 'back to category list', categories_path
+.pure-u-1
+ = form_tag category_path(@category), :method => :put, :class => "pure-form pure-form-stacked" do
+  = label :category, :name, 'Category Name'
+  = text_field :category, :name
+  = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
