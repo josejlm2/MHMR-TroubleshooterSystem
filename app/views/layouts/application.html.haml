@@ -35,7 +35,8 @@
               = link_to "Categories", categories_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
-
+            %li.pure-menu-item
+              = link_to "Sign out", destroy_user_session_path, {:method => :delete}
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  
