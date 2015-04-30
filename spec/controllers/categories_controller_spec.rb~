@@ -17,9 +17,6 @@ describe CategoriesController do
     end
 
     it "loads all of the categories into @categories" do
-      user = double('user')
-      allow(request.env['warden']).to receive(:authenticate!) {user}
-      allow(controller).to receive(:current_user) {user}
       category1, category2 = Category.create!, Category.create!
       get :index
 
