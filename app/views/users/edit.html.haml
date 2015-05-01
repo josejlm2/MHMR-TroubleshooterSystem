@@ -1,8 +1,6 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/user/edit.html.erb</p>
-%h2 edit User
-= form_tag user_path(@user), :method => :put do
- = label :user, :email, 'User Email'
+= content_for(:title,"Create New User")
+.pure-u-1
+= form_tag users_path, :method => :post, :class => "pure-form pure-form-stacked" do
  = email_field :user, :email
  = label :user, :password,  'User Password'
  = password_field :user, :password, autofocus: true

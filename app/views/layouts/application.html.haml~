@@ -15,6 +15,7 @@
 
   %body
     #layout
+    - if user_signed_in?
       / Menu toggle
       %a#menuLink.menu-link{:href => "#menu"}
         / Hamburger icon        
@@ -26,6 +27,7 @@
             
             %li.pure-menu-item
               = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
+          
             %li.pure-menu-item
               = link_to "Locations", locations_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
@@ -38,11 +40,18 @@
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
+          
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  
             
         .content
-          %div
+          %div.pure-g
             = yield
+    - else
+      #main
+      .header
+        %h1= content_for?(:title) ? yield(:title) : "default title"  
+      .content
+        = yield
         

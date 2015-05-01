@@ -11,3 +11,6 @@ location = Location.create(name: 'bryan')
 email= Email.create(email_address: 'jack@yahoo.com')
 
 user = User.create(email: 'name@test.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: true)
+user = User.create(email: 'name@admin.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: false)
+user = User.create(email: 'name@normal.com', password: 'password1', password_confirmation: 'password1', admin: false, manager: false)
+user = User.create(email: 'name@manager.com', password: 'password1', password_confirmation: 'password1', admin: false, manager: true)
