@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+@@Months=["January","February","March","April","May","June","July","August","September","October","November","December"]
   def index
         
 	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
@@ -54,32 +55,23 @@ class TicketsController < ApplicationController
 	redirect_to tickets_path
   end
  def summary
-	#find all tickets closed
-	#Ticket.where("status  = closed")
 	@Ticket_stats=[]
-	@Months=[
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December"
-	]
 	(1..12).each do |i|
-		@Ticket_stats.push([@Months[i-1],Ticket.created_in_month(i).count , Ticket.closed_in_month(i).count])
+		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i).count , Ticket.closed_in_month(i).count,i] )
 	end
 		
  end
  def monthSummary
-	#Date.strptime("12/13/2013", "%m/%d/%Y")	
-	@tickets =Ticket.where("created_at >= :start_date AND created_at <= :end_date",
-	  {start_date: params[:start_date], end_date: params[:end_date]})
-	redirect_to summary_tickets_path
+    @month =params[:id] 
+    @LocationStats=[]
+    @CategoryStats=[]
+    @Month = @@Months[@month.to_i]
+    Location.all.each do |loc|
+	@LocationStats.push([loc.name, Ticket.location(loc.id).created_in_month(@month).count ,Ticket.location(loc.id).closed_in_month(@month).count ])
+    end
+    Category.all.each do |cat|
+	@CategoryStats.push([cat.name, Ticket.category(cat.id).created_in_month(@month).count ,Ticket.category(cat.id).closed_in_month(@month).count ])
+    end
+
  end
 end

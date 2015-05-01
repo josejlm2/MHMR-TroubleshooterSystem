@@ -9,7 +9,7 @@
   %tbody
   - @Ticket_stats.each do |stats|
    %tr{:class => cycle('','pure-table-odd')}
-    %td= stats[0]
+    %td= link_to "#{stats[0]}", monthSummary_tickets_path(:id => stats[3])
     %td= stats[1]
     %td= stats[2]
 
