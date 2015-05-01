@@ -1,6 +1,6 @@
 class Ticket < ActiveRecord::Base
  scope :created_in_month, ->(month) { where("DATE_PART('month', created_at) = ?", month) }
- scope :closed_in_month, ->(month) { where("DATE_PART('month',  updated_at) = ?", month) }
+ scope :closed_in_month, ->(month) { where("DATE_PART('month',  updated_at) = ? AND status_id = ?", month, Status.find_by_name("Completed").id) }
 
    belongs_to :location
    belongs_to :category
