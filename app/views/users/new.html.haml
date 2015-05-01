@@ -1,8 +1,6 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
-%h2 Create New User
-
-= form_tag users_path, :method => :post do
+= content_for(:title,"Create New User")
+.pure-u-1
+= form_tag users_path, :method => :post, :class => "pure-form pure-form-stacked" do
  = label :user, :email, 'User Email'
  = email_field :user, :email, autofocus: true
  = label :user, :password, 'User Password'
