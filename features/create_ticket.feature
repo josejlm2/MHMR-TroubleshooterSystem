@@ -9,6 +9,7 @@ Scenario: Create new Ticket
   When I am on the list of tickets
   When I follow "Create ticket"
   And I fill in "Requestor" with "John Doe"
+  And I fill in "Email" with "john@doe.com"
   And I press "Save Changes"
   Then I should see "John Doe"
   And I should have 1 ticket

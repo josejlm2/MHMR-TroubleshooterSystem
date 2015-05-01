@@ -25,6 +25,8 @@ class TicketsController < ApplicationController
   def create
 	@ticket = Ticket.new(params[:ticket])
 	if @ticket.save
+                ConfirmationMailer.confirmation_email(@ticket).deliver
+		NotificationMailer.notification_email(@ticket)
 		redirect_to(:action => 'index')
 	else
 		render('new')
