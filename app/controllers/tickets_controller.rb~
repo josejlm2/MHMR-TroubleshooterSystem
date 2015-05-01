@@ -53,21 +53,11 @@ class TicketsController < ApplicationController
     end
   end
   def delete
-    if current_user.admin?
 	@ticket = Ticket.find(params[:id])
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
   end
   def destroy
-    if current_user.admin?
   	@ticket = Ticket.find(params[:id])
 	@ticket.destroy
 	redirect_to tickets_path
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
   end
 end
