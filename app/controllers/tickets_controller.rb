@@ -2,7 +2,7 @@ class TicketsController < ApplicationController
 @@Months=["January","February","March","April","May","June","July","August","September","October","November","December"]
   def index
         
-	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
+	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc')
 	respond_to do |format|
 		format.html
 		format.json { render json: @tickets }
