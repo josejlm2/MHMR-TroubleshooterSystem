@@ -1,36 +1,34 @@
 = content_for(:title, "Tickets")
 
 -#Find me in app/views/tickets/index.html.erb
-%table#tickets.pure-table.pure-table-bordered
- %thead
-  %th  view
-  %th  edit
-  %th  delete
-  %th  id
-  %th  requestor
-  %th  phone
-  %th  ru
-  %th  email
-  %th  room
-  %th  subject
-  %th  description
-  %th  location_id
-  %th  ticket_category_id
-  
- %tbody
- - @tickets.each do |ticket|
-  %tr{:class => cycle('','pure-table-odd')}
-   %td= "view button"
-   %td= link_to 'Edit Info', edit_ticket_path(ticket), :method => :get
-   %td= link_to 'Delete', ticket_path(ticket), :method => :delete
-   %td= ticket.id
-   %td= ticket.requestor
-   %td= ticket.phone
-   %td= ticket.ru
-   %td= ticket.email
-   %td= ticket.room
-   %td= ticket.subject
-   %td= ticket.description
-   %td= ticket.location_id
-   %td= ticket.ticket_category_id
-= link_to 'Create ticket', new_ticket_path
+
+%span.details.table
+.logs.pagination
+ =will_paginate
+
+%p 
+ = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_ticket_path 
+
+.pure-u-1
+ %table#tickets.pure-table.pure-table-bordered
+  %thead
+   %th  View
+   %th  Edit
+   %th  Delete
+   %th  Status
+   %th  Subject
+   %th  Description
+   %th  Category
+   %th  Location
+   
+  %tbody
+  - @tickets.each do |ticket|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img")
+    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
+    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
+    %td= Status.find(ticket.status_id).name
+    %td= ticket.subject
+    %td= ticket.description
+    %td= Category.find(ticket.category_id).name
+    %td= Location.find(ticket.location_id).name

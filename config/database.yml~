@@ -1,6 +1,3 @@
-# SQLite version 3.x
-#   gem install pg
-#
 #   Ensure the Postgre SQL gem is defined in your Gemfile
 #   gem 'pg'
 
@@ -11,8 +8,8 @@ development:
 #  database: db/development.postgresql
   pool: 5
   timeout: 5000
-#  username: user
-#  password: password1
+  username: myapp
+  password: 
 
 
 # Warning: The database defined as "test" will be erased and
@@ -25,17 +22,16 @@ test: &test
   database: my_database_test
 #  database: db/test.postgresql
   pool: 5
-#  username: user
-#  password: password1
+  username: myapp
+  password: 
   
 production:
   adapter: postgresql
   database: my_database_production
 #  database: db/production.postgresql
   timeout: 5000
-
-#  username: user
-#  password: password1
+  username: myapp
+  password: 
   
 cucumber:
   <<: *test

@@ -1,8 +1,8 @@
-<h1>Locations#new</h1>
-<p>Find me in app/views/Locations/new.html.erb</p>
-%h2 Create New Location 
+= content_for(:title, "Create New Location")
 
-= form_tag locations_path, :method => :post do
- = label :location, :name, 'Location Name'
- = text_field :location, :name
- = submit_tag 'Save Changes'
+.pure-u-1
+ = form_tag locations_path, :method => :post, :class => "pure-form pure-form-stacked" do
+  = label :location, :name, 'Location Name'
+  = text_field :location, :name
+  = submit_tag 'Create Location', :class => "pure-button pure-button-success"
+

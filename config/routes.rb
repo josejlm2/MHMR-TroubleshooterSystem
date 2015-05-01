@@ -1,5 +1,6 @@
 MhmrTroubleshooter::Application.routes.draw do
   resources :emails 
+  devise_for :users, :path_prefix => 'mhmr'
   resources :categories
   resources :tickets do
    collection do
@@ -8,6 +9,13 @@ MhmrTroubleshooter::Application.routes.draw do
 	end
   end
   resources :locations
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  resources :users
+  resources :statuses
+  resources :users
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'
   # The priority is based upon order of creation:

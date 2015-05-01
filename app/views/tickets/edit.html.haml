@@ -1,8 +1,37 @@
-<h1>Tickets#edit</h1>
-<p>Find me in app/views/tickets/edit.html.erb</p>
-%h2 edit Ticket
-= form_tag ticket_path(@ticket), :method => :put do
- = label :ticket, :requestor, 'Ticket Requestor'
- = text_field :ticket, :requestor
- = submit_tag 'save changes'
-= link_to 'back to ticket list', tickets_path
+= content_for(:title, "Edit Ticket")
+%p
+=form_tag ticket_path(@ticket), :method => :put, :class => 'pure-form pure-form-stacked' do
+  %fieldset
+    .pure-g
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :subject, 'Subject' 
+        = text_field :ticket, :subject 
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :requestor, 'Ticket Requestor' 
+        = text_field :ticket, :requestor 
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :phone, 'Phone Number' 
+        = phone_field :ticket, :phone
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :ru, 'Ticket RU'
+        = text_field :ticket, :ru 
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :email, 'Email'
+        = email_field :ticket, :email
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :room, 'Room'
+        = text_field :ticket, :room
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :location_id, 'Location'
+        = collection_select(:ticket, :location_id, Location.all, :id, :name)
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :category_id, 'Ticket Category'
+        = collection_select(:ticket, :category_id, Category.all, :id, :name)
+      %div.pure-u-md-1-2.pure-u-1.newticket
+        = label :ticket, :status_id, 'Ticket Status'
+        = collection_select(:ticket, :status_id, Status.all, :id, :name)
+      %div.pure-u-md-3-4.pure-u-1.newticket
+        = label :ticket, :description, 'Description'
+        = text_area :ticket, :description, :cols => "100", :rows => "10"
+      %div.pure-u-md-3-4.pure-u-1.newticket
+        = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"

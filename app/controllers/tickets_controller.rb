@@ -1,7 +1,19 @@
 class TicketsController < ApplicationController
   def index
-	@tickets = Ticket.all
+        
+	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10)
+	respond_to do |format|
+		format.html
+		format.json { render json: @tickets }
+	end
+  end       
+  
+
+  def select
+	@ticket = Ticket.find(params[:id])
+        @status = Ticket.status
   end
+
 
   def show
 	@ticket = Ticket.find(params[:id])
@@ -13,18 +25,22 @@ class TicketsController < ApplicationController
   def create
 	@ticket = Ticket.new(params[:ticket])
 	if @ticket.save
+                ConfirmationMailer.confirmation_email(@ticket).deliver
+		NotificationMailer.notification_email(@ticket)
 		redirect_to(:action => 'index')
 	else
 		render('new')
 	end
   end
+
   def edit
 	@ticket = Ticket.find(params[:id])
+	
   end
   def update
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
-		redirect_to tickets_path(@ticket)
+		redirect_to tickets_path
 	else
 		render('index')
 	end

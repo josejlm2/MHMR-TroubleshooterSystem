@@ -1,8 +1,7 @@
-<h1>Locations#edit</h1>
-<p>Find me in app/views/locations/edit.html.erb</p>
-%h2 edit Location 
-= form_tag location_path(@location), :method => :put do
- = label :location, :name, 'Location Name'
- = text_field :location, :name
- = submit_tag 'save changes'
-= link_to 'back to locations', locations_path 
+=content_for(:title, "Edit Location")
+
+.pure-u-1
+ = form_tag location_path(@location), :method => :put, :class => "pure-form pure-form-stacked" do
+  = label :location, :name, 'Location Name'
+  = text_field :location, :name
+  = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"

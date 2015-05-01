@@ -1,16 +1,17 @@
-%h1  Categories#index
--#Find me in app/views/categories/index.html.erb
-%table#categories
- %thead
-  %th  id
-  %th  name
-  %th  edit
-  %th  delete
- %tbody
- - @categories.each do |category|
-  %tr
-   %td= category.id
-   %td= category.name
-   %td= link_to 'Edit Info', edit_category_path(category), :method => :get
-   %td= link_to 'Delete', category_path(category), :method => :delete
-= link_to 'Create category', new_category_path
+= content_for(:title, "Categories")
+
+.pure-u-1
+ %p 
+  = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_category_path
+
+ %table#categories.pure-table.pure-table-bordered
+  %thead
+   %th  Edit
+   %th  Delete
+   %th  Name
+  %tbody
+  - @categories.each do |category|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button"), edit_category_path(category), :method => :get
+    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button"), category_path(category), :method => :delete
+    %td= category.name
