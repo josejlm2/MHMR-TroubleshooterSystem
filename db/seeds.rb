@@ -20,6 +20,22 @@ location_list = [
 	"Webb",
 	"Laredo"
 ]
+@created_dates_list =[
+	"2015-05-01 17:59:12",
+	"2015-04-05 17:59:12",
+        "2015-03-06 17:59:12",
+	"2015-02-14 17:59:12",
+	"2015-02-08 17:59:12",
+        "2015-01-01 17:59:12"
+]
+@updated_dates_list =[
+	"2015-06-01 17:59:12",
+	"2015-05-05 17:59:12",
+        "2015-04-06 17:59:12",
+	"2015-03-14 17:59:12",
+	"2015-03-08 17:59:12",
+        "2015-02-01 17:59:12"
+]
 @status = []
 @category = []
 @location = []
@@ -34,8 +50,9 @@ end
 location_list.each do |name|
     @location.push(Location.create(name: name))
 end
-(0..5).each do 
-  ticket = Ticket.create(requestor: 'John Doe', phone: '555-478-9332', ru: 2, email: 'john@doe.com', room: 652, subject: 'Please Help', description: 'I have a problem', status_id: @status[rand(3)].id, location_id: @location[rand(3)].id, category_id: @category[rand(3)].id)
+# created_at: "2015-05-01 17:59:12", updated_at: "2015-05-01 17:59:12"
+(0..5).each do |i| 
+  ticket = Ticket.create(requestor: 'John Doe', phone: '555-478-9332', ru: 2, email: 'john@doe.com', room: 652, subject: 'Please Help', description: 'I have a problem', status_id: @status[rand(3)].id, location_id: @location[rand(3)].id, category_id: @category[rand(3)].id, created_at: @created_dates_list[i], updated_at: @updated_dates_list[i])
 end
 email= Email.create(email_address: 'jack@yahoo.com')
 
