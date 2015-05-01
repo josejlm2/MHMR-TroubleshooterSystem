@@ -13,5 +13,10 @@ Then /^I should have ([0-9]+) category$/ do |count|
     Category.count.should == count.to_i
 end
 
-
+Given /^I click on create category$/ do
+        click_on('Add Button')
+end
+Given /^I click on delete category$/ do
+        click_on('Delete Button')
+end
 

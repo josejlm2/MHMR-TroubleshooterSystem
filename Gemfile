@@ -73,9 +73,9 @@ end
 # To use debugger
 # gem 'debugger'
 
+# To hide gmail credentials
+gem 'figaro'
+
 # To use devise
 gem 'devise'
 gem 'capybara'
-
-
-

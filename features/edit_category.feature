@@ -8,6 +8,6 @@ Scenario: edit Category
 Given I have a category name cars
 And I am on the edit category page
 And I fill in "Name" with "Electricity"
-And I press "save changes"
+And I press "Save Changes"
 Then I should see "Electricity"
 

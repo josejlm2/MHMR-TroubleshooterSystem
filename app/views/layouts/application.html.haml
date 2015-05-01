@@ -26,7 +26,6 @@
             
             %li.pure-menu-item
               = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
-          
             %li.pure-menu-item
               = link_to "Locations", locations_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
@@ -38,8 +37,9 @@
             %li.pure-menu-item
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
+              = link_to "Ticket Summary", summary_tickets_path, {:class => "pure-menu-link"}
+            %li.pure-menu-item
               = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
-          
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  

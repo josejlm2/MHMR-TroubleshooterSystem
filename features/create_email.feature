@@ -5,7 +5,7 @@ Feature: Create Email Entry
 Scenario:
   Given I have no emails
   When I am on the list of emails
-  When I follow "Create Email"
+  Given I click on create email
   And I fill in "email_email_address" with "jack@yahoo.com"
   And I press "Save Changes"
   Then I should see "jack@yahoo.com"
