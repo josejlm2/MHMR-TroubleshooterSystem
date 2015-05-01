@@ -4,7 +4,12 @@ I want to edit a Location in the "Facility Troubleshooter" Database location lis
 So that I may change location names
 
 Scenario: edit Location
-  Given I have a location name Texas
+  Given I am an admin user
+  When I go to the sign in page
+  And I fill in "Email" with "name@test.com"
+  And I fill in "Password" with "password1"
+  And I press "Log in"
+  And I have a location name Texas
   And I am on the locations  page
   And I follow "Edit Location"
   And I fill in "Name" with "Virginia"

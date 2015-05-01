@@ -4,8 +4,13 @@ So that the facility members can view and submit tickets to it
 I want to add a location to the "Facility Troubleshooter" Database's location list
 
 Scenario: Create new Location
-  When I am on the locations page
-  When I follow "Create location"
+  Given I am an admin user
+  When I go to the sign in page
+  And I fill in "Email" with "name@test.com"
+  And I fill in "Password" with "password1"
+  And I press "Log in"
+  And I am on the locations page
+  And I follow "Create location"
   And I fill in "Name" with "Texas"
   And I press "Save Changes" 
   Then I should see "Texas"

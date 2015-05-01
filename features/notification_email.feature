@@ -5,9 +5,14 @@ So that the facility manager can be alerted
 I want to receive an email notification when entries are added to the "Facility Troubleshooter" Database
 
 Scenario: Confirm ticket notifications
-  Given a clear email queue
-  When I am on the list of tickets
-  When I follow "Create ticket"
+  Given I am an admin user
+  When I go to the sign in page
+  And I fill in "Email" with "name@test.com"
+  And I fill in "Password" with "password1"
+  And I press "Log in"
+  And a clear email queue
+  And I am on the list of tickets
+  And I follow "Create ticket"
   And I fill in "Email" with "john@doe.com"
   And I press "Save Changes"
   Then I should have 1 ticket

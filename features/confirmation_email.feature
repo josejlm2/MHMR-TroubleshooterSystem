@@ -5,9 +5,14 @@ So that the staff can confirm ticket submission
 I want to receive a confirmation email when I submit a ticket
 
 Scenario: Confirm a ticket submission
-  Given a clear email queue
-  When I am on the list of tickets
-  When I follow "Create ticket"
+  Given I am an admin user
+  When I go to the sign in page
+  And I fill in "Email" with "name@test.com"
+  And I fill in "Password" with "password1"
+  And I press "Log in"
+  And a clear email queue
+  And I am on the list of tickets
+  And I follow "Create ticket"
   And I fill in "Email" with "john@doe.com"
   And I press "Save Changes"
   Then I should have 1 ticket
