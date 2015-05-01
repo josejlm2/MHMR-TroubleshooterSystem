@@ -15,7 +15,6 @@
 
   %body
     #layout
-    - if user_signed_in?
       / Menu toggle
       %a#menuLink.menu-link{:href => "#menu"}
         / Hamburger icon        
@@ -24,7 +23,7 @@
         .pure-menu
           %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button pure-img")
           %ul.pure-menu-list
-          - if current_user.admin?  
+            
             %li.pure-menu-item
               = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
           
@@ -40,11 +39,7 @@
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
-          - else
-            %li.pure-menu-item
-              = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
-            %li.pure-menu-item
-              = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
+          
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  
@@ -52,10 +47,4 @@
         .content
           %div.pure-g
             = yield
-    - else
-      #main
-      .header
-        %h1= content_for?(:title) ? yield(:title) : "default title"  
-      .content
-        = yield
         
