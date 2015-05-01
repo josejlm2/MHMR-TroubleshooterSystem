@@ -11,5 +11,5 @@ Scenario: delete Email Entry
   And I press "Log in"
   And I have a email name jack@yahoo.com
   And I am on the list of emails
-  And I follow "Delete"
+  When I follow "Delete"
   Then I should have 0 emails

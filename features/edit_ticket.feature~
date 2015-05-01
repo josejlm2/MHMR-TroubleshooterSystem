@@ -13,5 +13,5 @@ Scenario: edit Ticket
   And I have a ticket requestor "John Doe"
   And I am on the edit ticket page
   And I fill in "Requestor" with "James Doe"
-  And I press "Save Changes"
+  And I press "save changes"
   Then I should see "James Doe"

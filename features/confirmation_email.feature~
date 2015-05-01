@@ -12,7 +12,7 @@ Scenario: Confirm a ticket submission
   And I press "Log in"
   And a clear email queue
   And I am on the list of tickets
-  And I follow "Create ticket"
+  And I press "Create"
   And I fill in "Email" with "john@doe.com"
   And I press "Save Changes"
   Then I should have 1 ticket
