@@ -17,6 +17,8 @@ module NavigationHelpers
       '/'
     when /^the list of categories$/
 	categories_path
+    when /^the list of users$/
+	users_path
     when /^the show category$/
 	category_path(@category)
     when /^the edit category page$/

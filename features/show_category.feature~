@@ -16,11 +16,6 @@ Then I should see "electricity"
 And I should see "cars"
 
 Scenario: Show Category
-Given I am an admin user
-When I go to the sign in page
-And I fill in "Email" with "name@test.com"
-And I fill in "Password" with "password1"
-And I press "Log in"
-And I have a category name electricity
-And I go to the show category
+Given I have a category name electricity
+When I go to the show category
 Then I should see "electricity"
