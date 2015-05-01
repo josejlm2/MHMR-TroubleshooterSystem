@@ -6,44 +6,29 @@
 .logs.pagination
  =will_paginate
 
-.pure-g
- .pure-u-1-3
-  %p 
-   = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_ticket_path 
+%p 
+ = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_ticket_path 
 
-%table#tickets.pure-table.pure-table-bordered
- %thead
-  %th  View
-  %th  Edit
-  %th  Delete
-  %th  Task#
-  %th  Status
-  %th  Submitted
-  %th  Subject
-  %th  Description
-  %th  Category
-  %th  Location
-  %th  Room
-  %th  Requestor
-  %th  Phone
-  %th  Email
-  %th  RU
-  
- %tbody
- - @tickets.each do |ticket|
-  %tr{:class => cycle('','pure-table-odd')}
-   %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img")
-   %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
-   %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
-   %td= ticket.id
-   %td= Status.find(ticket.status_id).name
-   %td= ticket.id
-   %td= ticket.subject
-   %td= ticket.description
-   %td= Category.find(ticket.category_id).name
-   %td= Location.find(ticket.location_id).name
-   %td= ticket.room 
-   %td= ticket.requestor
-   %td= ticket.phone
-   %td= ticket.email
-   %td= ticket.ru
+.pure-u-1
+ %table#tickets.pure-table.pure-table-bordered
+  %thead
+   %th  View
+   %th  Edit
+   %th  Delete
+   %th  Status
+   %th  Subject
+   %th  Description
+   %th  Category
+   %th  Location
+   
+  %tbody
+  - @tickets.each do |ticket|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img")
+    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
+    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
+    %td= Status.find(ticket.status_id).name
+    %td= ticket.subject
+    %td= ticket.description
+    %td= Category.find(ticket.category_id).name
+    %td= Location.find(ticket.location_id).name
