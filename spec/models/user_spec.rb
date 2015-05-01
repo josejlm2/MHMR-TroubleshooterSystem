@@ -21,7 +21,7 @@ describe User do
         fill_in "Password", :with => "password"
 
 	click_button "Log in"
-        expect(page).to have_content("Log in")
+        expect(page).to have_content("Log In")
    end
 end
 
