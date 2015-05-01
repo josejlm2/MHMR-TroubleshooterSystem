@@ -64,14 +64,28 @@ class TicketsController < ApplicationController
  def monthSummary
     @month =params[:id] 
     @LocationStats=[]
-    @CategoryStats=[]
+    @CategoryNames=Hash.new
     @Month = @@Months[@month.to_i]
     Location.all.each do |loc|
-	@LocationStats.push([loc.name, Ticket.location(loc.id).created_in_month(@month).count ,Ticket.location(loc.id).closed_in_month(@month).count ])
+	@TicketLocation=Ticket.location(loc.id)
+	created= @TicketLocation.created_in_month(@month)
+	closed=@TicketLocation.closed_in_month(@month)
+	@LocationStats.push([loc.name, created.count , closed.count ,storeHash(created),storeHash(closed)])
     end
     Category.all.each do |cat|
-	@CategoryStats.push([cat.name, Ticket.category(cat.id).created_in_month(@month).count ,Ticket.category(cat.id).closed_in_month(@month).count ])
+	@CategoryNames[cat.id]=cat.name
     end
 
+ end
+ def storeHash(data)
+	temp = Hash.new
+	data.each do |ticket|
+		if temp.has_key?(ticket.category_id)
+			temp[ticket.category_id] +=1
+		else
+			temp[ticket.category_id]=1
+		end
+	end
+	return temp
  end
 end
