@@ -1,21 +1,21 @@
-%h1  Users#index
--#Find me in app/views/users/index.html.erb
+=content_for(:title, "Users")
 
-%table#users
- %thead
-  %th  id
-  %th  email
-  %th  admin
-  %th  manager
-  %th  edit
-  %th  delete
- %tbody
- - @users.each do |user|
-  %tr
-   %td= user.id
-   %td= user.email
-   %td= user.admin
-   %td= user.manager
-   %td= link_to 'Edit Info', edit_user_path(user), :method => :get
-   %td= link_to 'Delete', user_path(user), :method => :delete
-= link_to 'Create user', new_user_path
+.pure-u-1
+ %table#users.pure-table.pure-table-bordered
+  %thead
+   %th  id
+   %th  email
+   %th  admin
+   %th  manager
+   %th  edit
+   %th  delete
+  %tbody
+  - @users.each do |user|
+   %tr
+    %td= user.id
+    %td= user.email
+    %td= user.admin
+    %td= user.manager
+    %td= link_to 'Edit Info', edit_user_path(user), :method => :get
+    %td= link_to 'Delete', user_path(user), :method => :delete
+ = link_to 'Create user', new_user_path
