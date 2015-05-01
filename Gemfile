@@ -73,7 +73,9 @@ end
 # To use debugger
 # gem 'debugger'
 
-
+# To use devise
+gem 'devise'
+gem 'capybara'
 
 
 
