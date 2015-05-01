@@ -34,7 +34,7 @@ module NavigationHelpers
     when /^the edit email page$/
 	edit_email_path(@email)
     when /^the sign in page$/
-	"users/sign_in"
+	"mhmr/users/sign_in"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
