@@ -52,10 +52,5 @@
         .content
           %div.pure-g
             = yield
-    - else
-      #main
-      .header
-        %h1= content_for?(:title) ? yield(:title) : "default title"  
-      .content
-        = yield
+    
         
