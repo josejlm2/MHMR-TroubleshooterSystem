@@ -1,21 +1,20 @@
 =content_for(:title, "Users")
 
 .pure-u-1
+ %p
+  = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_user_path
  %table#users.pure-table.pure-table-bordered
   %thead
-   %th  id
+   %th  edit
+   %th  delete
    %th  email
    %th  admin
    %th  manager
-   %th  edit
-   %th  delete
   %tbody
   - @users.each do |user|
-   %tr
-    %td= user.id
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button"), edit_user_path(user), :method => :get
+    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button"), user_path(user), :method => :delete
     %td= user.email
     %td= user.admin
     %td= user.manager
-    %td= link_to 'Edit Info', edit_user_path(user), :method => :get
-    %td= link_to 'Delete', user_path(user), :method => :delete
- = link_to 'Create user', new_user_path

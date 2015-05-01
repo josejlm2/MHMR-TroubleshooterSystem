@@ -15,4 +15,3 @@ Scenario: edit Category
   And I fill in "Name" with "Electricity"
   And I press "Save Changes"
   Then I should see "Electricity"
-

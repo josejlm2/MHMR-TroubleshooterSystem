@@ -1,8 +1,13 @@
 MhmrTroubleshooter::Application.routes.draw do
-  resources :emails # , except:[:show]
+  resources :emails 
   devise_for :users, :path_prefix => 'mhmr'
   resources :categories
-  resources :tickets
+  resources :tickets do
+   collection do
+	get 'summary'
+	get 'monthSummary'
+	end
+  end
   resources :locations
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'

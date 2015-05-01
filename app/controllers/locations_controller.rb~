@@ -34,38 +34,23 @@ class LocationsController < ApplicationController
   end
 
   def edit
-    if current_user.admin?
-      @location = Location.find(params[:id])
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    @location = Location.find(params[:id])
   end
 
   def update
-    if current_user.admin?
-      @location = Location.find(params[:id])
-      
-      if(@location.update_attributes(params[:location]))
-        redirect_to locations_path(@location)
-      else
-        render('index')
-      end
+    @location = Location.find(params[:id])
+    
+    if(@location.update_attributes(params[:location]))
+      redirect_to locations_path(@location)
     else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
+      render('index')
     end
   end
 
   def destroy
-    if current_user.admin?
-      @location = Location.find(params[:id])
-      @location.destroy
+    @location = Location.find(params[:id])
+    @location.destroy
 
-      redirect_to locations_path
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
+    redirect_to locations_path
   end
 end
