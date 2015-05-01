@@ -321,7 +321,7 @@ DEPENDENCIES
   rails_12factor
   rspec
   rspec-rails (= 2.14)
-  sass (~> 3.2.5)
+  sass (~> 3.2.6)
   sass-rails (~> 3.2.3)
   simplecov
   uglifier (>= 1.0.3)
