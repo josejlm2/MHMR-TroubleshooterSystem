@@ -56,9 +56,27 @@ class TicketsController < ApplicationController
  def summary
 	#find all tickets closed
 	#Ticket.where("status  = closed")
-	@tickets = Ticket.all	
+	@Ticket_stats=[]
+	@Months=[
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December"
+	]
+	(1..12).each do |i|
+		@Ticket_stats.push([@Months[i-1],Ticket.created_in_month(i).count , Ticket.closed_in_month(i).count])
+	end
+		
  end
- def findByRange
+ def monthSummary
 	#Date.strptime("12/13/2013", "%m/%d/%Y")	
 	@tickets =Ticket.where("created_at >= :start_date AND created_at <= :end_date",
 	  {start_date: params[:start_date], end_date: params[:end_date]})

@@ -1,4 +1,14 @@
-%h1 Summary
 = content_for(:title, "Tickets Summary")
+.pure-u-1
+ %table#ticketsummary.pure-table.pure-table-bordered
+  %thead
+   %th  Month
+   %th  # Open
+   %th  # Closed
+  %tbody
+  - @Ticket_stats.each do |stats|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= stats[0]
+    %td= stats[1]
+    %td= stats[2]
 
-= button_to 'retrieve by date', findByRange_tickets_path, :method => "get" 
