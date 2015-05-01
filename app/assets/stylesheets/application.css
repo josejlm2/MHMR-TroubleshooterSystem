@@ -97,13 +97,14 @@ body {
     float:left;
 }
 
-.pagination {
+/**.pagination {
   .previous_page { background:#7777ff; color:white }
   .previous_page.disabled { background: white; color: #777 }
   .current { background: yellow }
   .next_page { background: #7777ff; color: white }
   .next_page.disabled { background: white; color: #777 }
 }
+**/
 
 .button-success,
 .button-error,
@@ -136,20 +137,16 @@ body {
 
 
 @media (max-width: 47.999em) {
-
     .custom-menu-3 {
         text-align: left;
     }
-
     .custom-toggle {
         display: block;
     }
-
    .table_button{
       width:24px;
       height:24px;
    }
-
 }
 
 
