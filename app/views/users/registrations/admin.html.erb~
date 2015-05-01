@@ -1,0 +1,5 @@
+<h2>Admin Information</h2>
+
+  <% if current_user.admin? -%>
+    
+  <% end -%>

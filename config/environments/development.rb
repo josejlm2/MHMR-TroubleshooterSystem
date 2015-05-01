@@ -35,7 +35,6 @@ MhmrTroubleshooter::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_deliveries = true
   ActionMailer::Base.delivery_method = :smtp
 
@@ -48,4 +47,7 @@ MhmrTroubleshooter::Application.configure do
     :enable_starttls_auto => true,
     :openssl_verify_mode  => 'none'
   }
+
+  # For devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

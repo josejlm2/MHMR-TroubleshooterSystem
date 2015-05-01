@@ -75,3 +75,7 @@ end
 
 # To hide gmail credentials
 gem 'figaro'
+
+# To use devise
+gem 'devise'
+gem 'capybara'

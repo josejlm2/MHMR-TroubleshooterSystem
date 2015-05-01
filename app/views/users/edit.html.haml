@@ -1,0 +1,16 @@
+<h1>Users#edit</h1>
+<p>Find me in app/views/user/edit.html.erb</p>
+%h2 edit User
+= form_tag user_path(@user), :method => :put do
+ = label :user, :email, 'User Email'
+ = email_field :user, :email
+ = label :user, :password,  'User Password'
+ = password_field :user, :password, autofocus: true
+ = label :user, :password_confirmation, 'Password Confirmation'
+ = password_field :user, :password_confirmation
+ = label :user, :admin, 'Admin'
+ = check_box :user, :admin
+ = label :user, :manager, 'Manager'
+ = check_box :user, :manager
+ = submit_tag 'save changes'
+= link_to 'back to user list', users_path
