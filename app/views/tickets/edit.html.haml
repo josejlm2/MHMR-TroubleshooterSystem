@@ -1,15 +1,24 @@
-= content_for(:title, "Edit Tickets")
-= form_tag ticket_path(@ticket), :method => :put do
+= content_for(:title, "New Ticket")
+%p
+= form_tag tickets_path, :method => :post, :class => "pure-form pure-form-stacked" do
+ - if @ticket.errors.any?
+  #error_explanation
+   %h2
+    The following prevented this Ticket from being submitted:
+   %ul 
+    - @ticket.errors.full_messages.each do |msg|
+     %li= msg
+		
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
-   = label :ticket, :requestor, 'Ticket Requestor' 
+   = label :ticket, :requestor, 'Ticket Requestor*' 
   .modal-body
    = text_field :ticket, :requestor 
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
-   = label :ticket, :phone, 'Phone Number' 
+   = label :ticket, :phone, 'Phone Number*' 
   .modal-body
-   = text_field :ticket, :phone
+   = telephone_field :ticket, :phone
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :ru, 'Ticket RU'
@@ -17,19 +26,14 @@
    = text_field :ticket, :ru 
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
-   = label :ticket, :email, 'Email'
+   = label :ticket, :email, 'Email*'
   .modal-body
-   = text_field :ticket, :email
+   = email_field :ticket, :email
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :room, 'Room'
   .modal-body
    = text_field :ticket, :room
- %div.pure-u-md-1-2.pure-u-1.newticket
-  .modal-body
-   = label :ticket, :subject, 'Subject'
-  .modal-body
-   = text_field :ticket, :subject
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
    = label :ticket, :location_id, 'Location'
@@ -40,20 +44,23 @@
    = label :ticket, :ticket_category_id, 'Ticket Category'
   .modal-body
    = collection_select(:ticket, :ticket_category_id, Category.all, :id, :name)
-
  %div.pure-u-md-1-2.pure-u-1.newticket
   .modal-body
-   = label :ticket, :status_id, 'Ticket Status'
+   = label :ticket, :ticket_status_id, 'Ticket Status'
   .modal-body
    = collection_select(:ticket, :status_id, Status.all, :id, :name)
-
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-body
-   = label :ticket, :description, 'Description'
+   = label :ticket, :subject, 'Subject*'
+  .modal-body
+   = text_area :ticket, :subject, :cols => "100", :rows => "1"
+ %div.pure-u-md-3-4.pure-u-1.newticket
+  .modal-body
+   = label :ticket, :description, 'Description*'
   .modal-body
    = text_area :ticket, :description, :cols => "100", :rows => "10"
  .modal-body
  %div.pure-u-md-3-4.pure-u-1.newticket
   .modal-footer
    = submit_tag 'Save Changes'
-= link_to 'back to ticket list', tickets_path
+  

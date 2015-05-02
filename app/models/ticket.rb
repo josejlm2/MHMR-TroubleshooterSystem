@@ -12,4 +12,10 @@ class Ticket < ActiveRecord::Base
    attr_accessible :location_id
    attr_accessible :ticket_category_id
    attr_accessible :status_id
+   validates_presence_of :requestor, :message => 'cannot be blank'
+   validates_presence_of :subject, :message => 'cannot be blank'
+   validates_presence_of :description, :message => 'cannot be blank'
+   validates_presence_of :email, :message => 'cannot be blank'
+   validates :phone, format: { with: /\d{3}[- ]?\d{3}[- ]?\d{4}( x\d{4})?|x\d{3}/, message: "incorrect phone format" }
+   
 end

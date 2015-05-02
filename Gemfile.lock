@@ -86,6 +86,7 @@ GEM
       rails (>= 3, < 5)
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
+    custom_error_message (1.1.1)
     database_cleaner (1.4.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
@@ -308,6 +309,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   cucumber-rails-training-wheels
+  custom_error_message
   database_cleaner
   factory_girl_rails
   foreigner
