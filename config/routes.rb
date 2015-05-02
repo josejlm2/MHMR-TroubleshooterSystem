@@ -5,7 +5,7 @@ MhmrTroubleshooter::Application.routes.draw do
   resources :tickets do
    collection do
 	get 'summary'
-	get 'findByRange'
+	get 'monthSummary'
 	end
   end
   resources :locations

@@ -37,6 +37,8 @@
             %li.pure-menu-item
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
+              = link_to "Ticket Summary", summary_tickets_path, {:class => "pure-menu-link"}
+            %li.pure-menu-item
               = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
       #main
         .header
