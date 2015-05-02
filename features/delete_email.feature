@@ -6,5 +6,5 @@ I want to be able to delete an email in the email table
 Scenario: delete Email Entry
 Given I have a email name jack@yahoo.com
 And I am on the list of emails
-When I follow "Delete"
+Given I click on delete email
 Then I should have 0 emails
