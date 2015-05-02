@@ -1,88 +1,57 @@
 <!doctype html>
 %html{:lang => "en"}
   %head
-  %meta{:charset => "utf-8"}
-  %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-  %meta{:content => "MHMR-Troubleshooter System for ticket submission", :name => "description"}
+    %meta{:charset => "utf-8"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+    %meta{:content => "MHMR-Troubleshooter System for ticket submission", :name => "description"}
           
-  %link{:href => "http://yui.yahooapis.com/pure/0.6.0/pure-min.css", :rel => "stylesheet"}
-    /[if lte IE 8]
-    <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
-    / [if gt IE 8]><!
-  %link{:href => "css/layouts/side-menu.css", :rel => "stylesheet"}
-    / <![endif]
 
-  %title= yield(:title)
-  = stylesheet_link_tag    "application", :media => "all"
-  = javascript_include_tag "application"
-  = javascript_include_tag "tickets"
-  = csrf_meta_tags
+    %title= yield(:title)
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = javascript_include_tag "tickets"
+    = csrf_meta_tags
 
 
   %body
     #layout
+    - if user_signed_in?
       / Menu toggle
       %a#menuLink.menu-link{:href => "#menu"}
         / Hamburger icon        
         %span
       #menu
         .pure-menu
-          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button")
+          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button pure-img")
           %ul.pure-menu-list
+            
             %li.pure-menu-item
               = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
+          
             %li.pure-menu-item
               = link_to "Locations", locations_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
-              %a.pure-menu-link{:href => "#"} Users
+              = link_to "Users", users_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Emails", emails_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Categories", categories_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
-
+            %li.pure-menu-item
+              = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
+          
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  
             
         .content
           %div.pure-g
-            %div.pure-u-md-1-24
-              %div.pure-u-md-11-12.pure-u-1
-                = yield
+            = yield
+    - else
+      #main
+      .header
+        %h1= content_for?(:title) ? yield(:title) : "default title"  
+      .content
+        = yield
         
-        :javascript
-          $(document).ready( function() {
-             var layout   = document.getElementById('layout'),
-             menu     = document.getElementById('menu'),
-             menuLink = document.getElementById('menuLink');
-
-             function toggleClass(element, className) {
-               var classes = element.className.split(/\s+/),
-               length = classes.length,
-               i = 0;
-               
-               for(; i < length; i++) {
-                 if (classes[i] === className) {
-                   classes.splice(i, 1);
-                   break;
-                 }
-               }  
-               
-               // The className is not found
-               if (length === classes.length) {
-                 classes.push(className);
-               }
-
-               element.className = classes.join(' ');
-            }  
-
-             menuLink.onclick = function (e) {
-               var active = 'active';
-               e.preventDefault();
-               toggleClass(layout, active);
-               toggleClass(menu, active);
-               toggleClass(menuLink, active);
-             };
-          } );
