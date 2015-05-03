@@ -1,4 +1,4 @@
-= content_for(:title, "Edit Ticket")
+= content_for(:title, "View or Edit Ticket")
 %p
 =form_tag ticket_path(@ticket), :method => :put, :class => 'pure-form pure-form-stacked' do
   %fieldset
@@ -33,5 +33,8 @@
       %div.pure-u-md-3-4.pure-u-1.newticket
         = label :ticket, :description, 'Description'
         = text_area :ticket, :description, :cols => "100", :rows => "10"
+      %div.pure-u-1.newticket
+        Ticket submitted
+        = @ticket.created_at.in_time_zone('Central Time (US & Canada)')
       %div.pure-u-md-3-4.pure-u-1.newticket
         = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"

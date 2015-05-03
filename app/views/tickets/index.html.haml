@@ -24,7 +24,7 @@
   %tbody
   - @tickets.each do |ticket|
    %tr{:class => cycle('','pure-table-odd')}
-    %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img"), ticket_path(ticket)
+    %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket)
     %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
     %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
     %td= Status.find(ticket.status_id).name
