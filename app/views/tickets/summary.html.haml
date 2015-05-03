@@ -1,5 +1,4 @@
-- @date =Date.today.year
-= content_for(:title, "Ticket Summary for #{@date}")
+= content_for(:title, "Ticket Summary for #{@year}")
 .pure-u-1
  %br
  %table#ticketsummary.pure-table.pure-table-bordered
@@ -10,7 +9,7 @@
   %tbody
   - @Ticket_stats.each do |stats|
    %tr{:class => cycle('','pure-table-odd')}
-    %td= link_to "#{stats[0]}", monthSummary_tickets_path(:id => stats[3])
+    %td= link_to "#{stats[0]}", monthSummary_tickets_path(:month => stats[3],:year =>@year)
     %td= stats[1]
     %td= stats[2]
 
