@@ -1,5 +1,8 @@
-= content_for(:title, "Ticket Month Summary for #{@Month}, #{Date.today.year}")
+= content_for(:title, "Ticket Summary for #{@Month} #{Date.today.year}")
+
 .pure-u-1
+ %br
+
  %table#ticketMonthSummary.pure-table.pure-table-bordered
   %thead
    %th  Location
@@ -12,8 +15,10 @@
     %td 
      %b= stats[0]
     %td
-    %td= stats[1]
-    %td= stats[2]
+    %td
+     %b= stats[1]
+    %td 
+     %b= stats[2]
    -@CategoryNames.each do |key,value|
     %tr{:class => cycle('','pure-table-odd')}
      %td
