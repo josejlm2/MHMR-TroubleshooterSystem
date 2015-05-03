@@ -5,6 +5,7 @@ MhmrTroubleshooter::Application.routes.draw do
   resources :tickets do
    collection do
 	get 'summary'
+	post 'summary'
 	get 'monthSummary'
 	end
   end

@@ -1,6 +1,10 @@
 = content_for(:title, "Ticket Summary for #{@year}")
 .pure-u-1
  %br
+ = form_tag summary_tickets_path, :method => :post, :class => "pure-form pure-form-stacked" do
+  = label :data, :id , 'Year'
+  = text_field :data, :id, placeholder: "#{@year}"
+  = submit_tag 'Submit', :class => "pure-button pure-button-primary" 
  %table#ticketsummary.pure-table.pure-table-bordered
   %thead
    %th  Month

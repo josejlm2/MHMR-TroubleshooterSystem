@@ -75,10 +75,7 @@ class TicketsController < ApplicationController
   end
  def summary
 	@Ticket_stats=[]
-    	@year=params[:id]
-	if not @year.present?
-		@year=Date.today.year	
-	end
+    	@year=params.has_key?(:data) ? params[:data][:id] : Date.today.year
 	(1..12).each do |i|
 		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i,@year).count , Ticket.closed_in_month(i,@year).count,i] )
 	end
