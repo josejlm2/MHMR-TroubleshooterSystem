@@ -35,7 +35,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    if current_user.admin?
+    if current_user.manager? or current_user.admin?
 	@ticket = Ticket.find(params[:id])
     else
       flash[:notice] = "Permission Denied!"
@@ -43,7 +43,7 @@ class TicketsController < ApplicationController
     end	
   end
   def update
-    if current_user.admin?
+    if current_user.manager? or current_user.admin?
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
 		redirect_to tickets_path
@@ -74,29 +74,38 @@ class TicketsController < ApplicationController
     end
   end
  def summary
+    if current_user.manager? or current_user.admin?
 	@Ticket_stats=[]
 	(1..12).each do |i|
 		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i).count , Ticket.closed_in_month(i).count,i] )
 	end
-		
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
  end
  def monthSummary
-    @month =params[:id] 
-    @LocationStats=[]
-    @CategoryNames=Hash.new
-    @Month = @@Months[@month.to_i]
-    Location.all.each do |loc|
-	@TicketLocation=Ticket.location(loc.id)
-	created= @TicketLocation.created_in_month(@month)
-	closed=@TicketLocation.closed_in_month(@month)
-	@LocationStats.push([loc.name, created.count , closed.count ,storeHash(created),storeHash(closed)])
+    if current_user.manager? or current_user.admin?
+      @month =params[:id] 
+      @LocationStats=[]
+      @CategoryNames=Hash.new
+      @Month = @@Months[@month.to_i]
+      Location.all.each do |loc|
+	  @TicketLocation=Ticket.location(loc.id)
+	  created= @TicketLocation.created_in_month(@month)
+	  closed=@TicketLocation.closed_in_month(@month)
+	  @LocationStats.push([loc.name, created.count , closed.count ,storeHash(created),storeHash(closed)])
+      end
+      Category.all.each do |cat|
+	  @CategoryNames[cat.id]=cat.name
+      end
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
     end
-    Category.all.each do |cat|
-	@CategoryNames[cat.id]=cat.name
-    end
-
  end
  def storeHash(data)
+    if current_user.manager? or current_user.admin?
 	temp = Hash.new
 	data.each do |ticket|
 		if temp.has_key?(ticket.category_id)
@@ -106,5 +115,9 @@ class TicketsController < ApplicationController
 		end
 	end
 	return temp
- end
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
+  end
 end

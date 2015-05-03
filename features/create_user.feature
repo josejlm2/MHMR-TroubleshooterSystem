@@ -11,7 +11,7 @@ Scenario: Create new User
   And I fill in "Password" with "password1"
   And I press "Log in"
   And I go to the list of users
-  And I follow "Create user"
+  And I follow "Add Button"
   And I fill in "Email" with "name@temp.com"
   And I fill in "User Password" with "password1"
   And I fill in "Password Confirmation" with "password1"

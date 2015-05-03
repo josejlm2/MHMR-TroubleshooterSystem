@@ -15,9 +15,9 @@ Scenario: edit User
   And I follow "Edit"
   And I fill in "User Password" with "password2"
   And I fill in "Password Confirmation" with "password2"
-  And I press "save changes"
+  And I press "Save Changes"
   And I fill in "Email" with "name@test.com"
-  And I fill in "Password" with "password2"
+  And I fill in "Password User" with "password2"
   And I press "Log in"
   And I go to the list of users
   Then I should see "name@test.com"

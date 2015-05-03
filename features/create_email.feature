@@ -10,7 +10,7 @@ Scenario:
   And I press "Log in"
   And I have no emails
   And I am on the list of emails
-  And I follow "Create Email"
+  And I follow "Add Button"
   And I fill in "email_email_address" with "jack@yahoo.com"
   And I press "Save Changes"
   Then I should see "jack@yahoo.com"
