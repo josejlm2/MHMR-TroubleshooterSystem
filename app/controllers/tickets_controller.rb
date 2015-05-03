@@ -76,6 +76,7 @@ class TicketsController < ApplicationController
  def summary
 	@Ticket_stats=[]
     	@year=params.has_key?(:data) ? params[:data][:id] : Date.today.year
+	@year= Integer(@year) rescue Date.today.year
 	(1..12).each do |i|
 		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i,@year).count , Ticket.closed_in_month(i,@year).count,i] )
 	end
