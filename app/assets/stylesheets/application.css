@@ -468,19 +468,30 @@ Hides the menu at `48em`, but modify this based on your app's needs.
        padding:3px;   
     }
     .content{
-        padding: 0 1em !important; 
+        padding: 0 0.5em !important; 
     }
 
     .action_column{
       min-width: 70px;
       text-align: center;
+      width: 70px;
     }
 
 }
 
 
 
+@media (max-width: 480px) {
+    .description_column, .category_column{
+      display:none; 
+    }
 
+    .status_column, .location_column,subject_column{
+      padding-left:0px !important;
+      padding-right:0px !important;
+    }
+
+}
 
 
 
