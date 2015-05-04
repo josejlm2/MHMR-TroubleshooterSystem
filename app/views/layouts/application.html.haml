@@ -9,7 +9,6 @@
     %title= yield(:title)
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
-    = javascript_include_tag "tickets"
     = csrf_meta_tags
 
 
@@ -21,11 +20,11 @@
         %span
       #menu
         .pure-menu
-          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo",  class:"table_button pure-img")
+          %a.pure-menu-heading{:href => "http://www.mhmrabv.org/"}= image_tag("mhmr_logo.png", :alt => "MHMR Logo", :height => "70px", :width =>"140")
           %ul.pure-menu-list
             
             %li.pure-menu-item
-              = link_to "Ticket", tickets_path, {:class => "pure-menu-link"}
+              = link_to "Tickets", tickets_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
               = link_to "Locations", locations_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
@@ -37,9 +36,9 @@
             %li.pure-menu-item
               = link_to "Statuses", statuses_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
-              = link_to "Ticket Summary", summary_tickets_path, {:class => "pure-menu-link"}
+              = link_to "Reports", summary_tickets_path, {:class => "pure-menu-link"}
             %li.pure-menu-item
-              = link_to "Sign out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
+              = link_to "Log Out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"  

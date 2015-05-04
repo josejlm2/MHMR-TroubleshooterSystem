@@ -8,7 +8,6 @@ class TicketsController < ApplicationController
 		format.json { render json: @tickets }
 	end
   end       
-  
 
   def select
 	@ticket = Ticket.find(params[:id])

@@ -38,13 +38,14 @@ This is the parent `<div>` that contains the menu and the content area.
 /*
 The content `<div>` is where all your content goes.
 */
+
 .content {
     /*margin: 0 auto;*/
-    padding: 0 2em;
+    /* padding: 0 2em;
     margin-bottom: 50px;
-    line-height: 1.6em;
+    line-height: 1.6em;*/
 }
-
+ 
 .header {
      margin: 0;
      color: #333;
@@ -126,7 +127,7 @@ appears on the left side of the page.
     */
     #menu .pure-menu-selected,
     #menu .pure-menu-heading {
-        background: #1f8dd6;
+        background: #EDEDEF;
     }
         /*
         This styles a link within a selected menu item `<li>`.
@@ -204,7 +205,7 @@ small screens.
 /*
 Hides the menu at `48em`, but modify this based on your app's needs.
 */
-@media (min-width: 48em) {
+@media (min-width: 769px) {
 
     .header,
     .content {
@@ -243,4 +244,6 @@ Hides the menu at `48em`, but modify this based on your app's needs.
         left: 150px;
     }
 }
+
+
 
