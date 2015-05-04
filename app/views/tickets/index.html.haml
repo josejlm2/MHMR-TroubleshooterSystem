@@ -12,8 +12,15 @@
 .pure-u-1
  %table#tickets.pure-table.pure-table-bordered
   %thead
+<<<<<<< HEAD
    %th{:class => "action_column"}  Actions
    %th{:class => "status_column"}  Status
+=======
+   %th{:class => "view_column"}  View
+   %th{:class => "edit_column"}   Edit
+   %th{:class => "delete_column"}   Delete
+   %th{:class => "status_column"}   Status
+>>>>>>> 20e814d22a4861440e0aff9900dbf7963864afd4
    %th{:class => "subject_column"}  Subject
    %th{:class => "description_column"}  Description
    %th{:class => "category_column"}  Category
@@ -22,10 +29,16 @@
   %tbody
   - @tickets.each do |ticket|
    %tr{:class => cycle('','pure-table-odd')}
+<<<<<<< HEAD
     %td{:class => "action_column"}
      %span{:class => "action_buttons"}= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32"), edit_ticket_path(ticket)
      %span{:class => "action_buttons"}= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get
      %span{:class => "action_buttons"}= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32"), ticket_path(ticket), :method => :delete
+=======
+    %td{:class => "view_column"}= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img")
+    %td{:class => "edit_column"}= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
+    %td{:class => "delete_column"}= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
+>>>>>>> 20e814d22a4861440e0aff9900dbf7963864afd4
     %td{:class => "status_column"}= Status.find(ticket.status_id).name
     %td{:class => "subject_column"}= ticket.subject
     %td{:class => "description_column"}= ticket.description

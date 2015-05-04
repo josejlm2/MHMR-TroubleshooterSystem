@@ -434,6 +434,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     /* styles for browsers larger than 960px; */
 }
 
+<<<<<<< HEAD
 @media only screen and (min-width:1440px){
     /* styles for browsers larger than 1440px; */
 }
@@ -491,6 +492,44 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
 }
+=======
+.view_column, .edit_column, .delete_column {
+  padding-left: 2px !important;
+  padding-right: 2px !important;
+  text-align: center !important;
+
+}
+
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px)
+  and (-webkit-min-device-pixel-ratio: 1) { 
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen 
+  and (min-device-width: 1200px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (min-resolution: 192dpi) { 
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 20e814d22a4861440e0aff9900dbf7963864afd4
 
 
 
