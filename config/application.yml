@@ -1,14 +1,2 @@
 # Add configuration values here, as shown below.
-#
-# pusher_app_id: ENV['PUSHER_APP_ID']
-# pusher_key: ENV['PUSHER_KEY']
-# pusher_secret: ENV['PUSHER_SECRET']
-# stripe_api_key: ENV['STRIPE_TEST_API_KEY']
-# stripe_publishable_key: ENV['STRIPE_TEST_PUBLISHABLE_KEY']
-#
-# production:
-#   stripe_api_key: ENV['STRIPE_API_KEY']
-#   stripe_publishable_key: ENV['STRIPE_PUBLISHABLE_KEY']
 
-:gmail_username => ENV['GMAIL_USERNAME']
-:gmail_password => ENV['GMAIL_PASSWORD']
