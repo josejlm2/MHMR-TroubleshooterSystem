@@ -411,6 +411,10 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   color: white !important;
 }
 
+#ticket_description{
+  width:100%;
+}
+
 
 @media (max-width: 47.999em) {
 
@@ -421,11 +425,6 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     .custom-toggle {
         display: block;
     }
-
-   .table_button{
-      width:24px;
-      height:24px;
-   }
 
 }
 
