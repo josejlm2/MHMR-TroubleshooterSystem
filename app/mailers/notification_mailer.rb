@@ -3,7 +3,8 @@ class NotificationMailer < ActionMailer::Base
 
   def notification_email(ticket)
     @ticket = ticket
-    @ticket_link = url_for :controller => 'tickets', :action => 'show', :id => @ticket.id
+    @ticket_link = url_for :host => 'mhmr-troubleshootersystem.heroku.com', :controller => 'tickets', :action => 'show', :id => @ticket.id
+    #@ticket_link = url_for :controller => 'tickets', :action => 'show', :id => @ticket.id
     Email.find_each do |staff|
       mail(to: staff.email_address, from: 'mhmr.troubleshooter@gmail.com', subject: 'Ticket Notification').deliver
     end
