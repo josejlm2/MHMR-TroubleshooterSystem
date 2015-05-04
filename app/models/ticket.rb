@@ -21,4 +21,5 @@ class Ticket < ActiveRecord::Base
    attr_accessible :location_id
    attr_accessible :category_id
    attr_accessible :status_id, :created_at, :updated_at
+   acts_as_paranoid
 end
