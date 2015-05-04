@@ -55,4 +55,17 @@ end
 # The :transaction strategy is faster, but might give you threading problems.
 # See https://github.com/cucumber/cucumber-rails/blob/master/features/choose_javascript_database_strategy.feature
 Cucumber::Rails::Database.javascript_strategy = :truncation
-World(FactoryGirl::Syntax::Methods)
+
+ActionMailer::Base.default_url_options = { host: 'localhost', port: 3000 }
+ActionMailer::Base.perform_deliveries = true
+ActionMailer::Base.delivery_method = :test
+
+ActionMailer::Base.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => "587",
+    :user_name            => ENV['gmail_username'],
+    :password             => ENV['gmail_password'],
+    :authentication       => "plain",
+    :enable_starttls_auto => true,
+    :openssl_verify_mode  => 'none'
+}

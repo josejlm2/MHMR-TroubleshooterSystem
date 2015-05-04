@@ -1,0 +1,19 @@
+= content_for(:title, "Locations")
+
+.pure-u-1
+ %p 
+ = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_location_path
+
+.pure-u-1
+ %table#locations.pure-table.pure-table-bordered
+  %thead
+   %th  Edit 
+   %th  Delete 
+   %th  Location Name 
+  %tbody
+  - @locations.each do |location|
+   %tr
+    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_location_path(location), :method => :get
+ 
+    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), location_path(location), :method => :delete
+    %td= location.name

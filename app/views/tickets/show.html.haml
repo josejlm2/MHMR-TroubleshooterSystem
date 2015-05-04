@@ -1,0 +1,33 @@
+= content_for(:title, "Ticket View")
+
+.pure-u-1
+ %table.pure-table.pure-table-bordered
+  %tbody
+   %tr
+    %td Requestor
+    %td= @ticket.requestor
+   %tr
+    %td Phone
+    %td= @ticket.phone
+   %tr
+    %td RU
+    %td= @ticket.ru
+   %tr
+    %td Email
+    %td= @ticket.email
+   %tr
+    %td Room
+    %td= @ticket.room
+   %tr
+    %td Subject
+    %td= @ticket.subject
+   %tr
+    %td Description
+    %td= @ticket.description
+   %tr
+    %td Location
+    %td= Location.find(@ticket.location_id).name
+   %tr
+    %td Category
+    %td= Category.find(@ticket.category_id).name
+

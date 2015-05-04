@@ -1,0 +1,14 @@
+= content_for(:title,"Create New User")
+.pure-u-1
+= form_tag users_path, :method => :post, :class => "pure-form pure-form-stacked" do
+ = label :user, :email, 'User Email'
+ = email_field :user, :email, autofocus: true
+ = label :user, :password, 'User Password'
+ = password_field :user, :password
+ = label :user, :password_confirmation, 'Password Confirmation'
+ = password_field :user, :password_confirmation
+ = label :user, :admin, 'Admin'
+ = check_box :user, :admin
+ = label :user, :manager, 'Manager'
+ = check_box :user, :manager
+ = submit_tag 'Create User'

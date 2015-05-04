@@ -1,0 +1,33 @@
+= content_for(:title, "Tickets")
+
+-#Find me in app/views/tickets/index.html.erb
+
+%span.details.table
+.logs.pagination
+ =will_paginate
+
+%p 
+ = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32"), new_ticket_path 
+
+.pure-u-1
+ %table#tickets.pure-table.pure-table-bordered
+  %thead
+   %th{:class => "action_column"}  Actions
+   %th{:class => "status_column"}  Status
+   %th{:class => "subject_column"}  Subject
+   %th{:class => "description_column"}  Description
+   %th{:class => "category_column"}  Category
+   %th{:class => "location_column"}  Location
+   
+  %tbody
+  - @tickets.each do |ticket|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td{:class => "action_column"}
+     %span{:class => "action_buttons"}= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32"), edit_ticket_path(ticket)
+     %span{:class => "action_buttons"}= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get
+     %span{:class => "action_buttons"}= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32"), ticket_path(ticket), :method => :delete
+    %td{:class => "status_column"}= Status.find(ticket.status_id).name
+    %td{:class => "subject_column"}= ticket.subject
+    %td{:class => "description_column"}= ticket.description
+    %td{:class => "category_column"}= Category.find(ticket.category_id).name
+    %td{:class => "location_column"}= Location.find(ticket.location_id).name

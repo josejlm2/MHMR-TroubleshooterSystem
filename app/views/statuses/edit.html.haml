@@ -1,0 +1,7 @@
+=content_for(:title, "Edit Status")
+
+.pure-u-1
+ = form_tag status_path(@status), :method => :put, :class => "pure-form pure-form-stacked" do
+  = label :status, :name, 'Status Name'
+  = text_field :status, :name
+  = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
