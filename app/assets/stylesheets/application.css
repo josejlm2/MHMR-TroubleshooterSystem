@@ -60,7 +60,7 @@ The content `<div>` is where all your content goes.
 
 .content {
     /*margin: 0 auto;   makes the content center */ 
-    padding: 0 2em;
+    padding: 0 1em;
     margin-bottom: 50px;
     line-height: 1.6em;
 }
@@ -240,8 +240,7 @@ small screens.
 Hides the menu at `48em`, but modify this based on your app's needs.
 */
 
-.header,
-.content {
+.header{
     padding-left: 2em;
     padding-right: 2em;
 }
@@ -284,8 +283,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   margin-bottom: 30px;
 }
 
-.content{
-}
+
 
 #tickets{
   width: 100%;
@@ -379,6 +377,20 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+/*makes view/edit/delete buttons be side by side in one row*/
+.action_buttons{
+    float: left;
+    padding:3px;   
+}
+
+/*makes the column as short as possible*/
+.action_column{
+    padding-left: 10px!important;
+    padding-right:0px!important;
+    width: 120px;
+    min-width: 120px;
+}
+
 .pure-button-success {
   background: rgb(28, 184, 65) !important; /* this is a green */
   color: white !important;
@@ -416,3 +428,61 @@ Hides the menu at `48em`, but modify this based on your app's needs.
    }
 
 }
+
+
+
+@media only screen and (min-width:960px){
+    /* styles for browsers larger than 960px; */
+}
+
+@media only screen and (min-width:1440px){
+    /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (min-width:2000px){
+   /* for sumo sized (mac) screens */
+}
+
+ 
+    @media only screen and (device-width:768px){
+       /* default iPad screens */
+    }
+    /* different techniques for iPad screening */
+   
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+   /* For landscape layouts only */
+}
+
+
+@media (max-width: 640px) {
+/*@media only screen and (max-device-width:480px){ /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .action_buttons{
+       float: none !important;
+       padding:3px;   
+    }
+    .content{
+        padding: 0 1em !important; 
+    }
+
+    .action_column{
+      min-width: 70px;
+      text-align: center;
+    }
+
+}
+
+
+
+
+
+
+
+
+

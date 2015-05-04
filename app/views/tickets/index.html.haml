@@ -7,14 +7,12 @@
  =will_paginate
 
 %p 
- = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_ticket_path 
+ = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32"), new_ticket_path 
 
 .pure-u-1
  %table#tickets.pure-table.pure-table-bordered
   %thead
-   %th  View
-   %th  Edit
-   %th  Delete
+   %th{:class => "action_column"}  Actions
    %th  Status
    %th  Subject
    %th  Description
@@ -24,9 +22,10 @@
   %tbody
   - @tickets.each do |ticket|
    %tr{:class => cycle('','pure-table-odd')}
-    %td= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket)
-    %td= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32", class:"table_button pure-img"), edit_ticket_path(ticket), :method => :get
-    %td= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32", class:"table_button pure-img"), ticket_path(ticket), :method => :delete
+    %td{:class => "action_column"}
+     %span{:class => "action_buttons"}= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32"), edit_ticket_path(ticket)
+     %span{:class => "action_buttons"}= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get
+     %span{:class => "action_buttons"}= link_to image_tag("delete_button.png", :alt => "Delete Button" , size: "32x32"), ticket_path(ticket), :method => :delete
     %td= Status.find(ticket.status_id).name
     %td= ticket.subject
     %td= ticket.description
