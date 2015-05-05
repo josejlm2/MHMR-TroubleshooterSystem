@@ -5,10 +5,16 @@ I want to add a Ticket to the "Facility Troubleshooter" Database's category list
 So that I may add more tickets
 
 Scenario: Create new Ticket
-  Given I have no tickets
+  Given I am an admin user
+  When I go to the sign in page
+  And I fill in "Email" with "name@test.com"
+  And I fill in "Password" with "password1"
+  And I press "Log in"
+  And I have no tickets
   When I am on the list of tickets
-  When I follow "Create ticket"
+  And I follow "Add Button"
   And I fill in "Requestor" with "John Doe"
-  And I press "Save Changes"
+  And I fill in "Email" with "john@doe.com"
+  And I press "Create Ticket"
   Then I should see "John Doe"
   And I should have 1 ticket

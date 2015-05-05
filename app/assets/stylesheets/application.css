@@ -13,14 +13,277 @@
  *= require_tree .
  */
 
+body {
+    color: #777;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+
+#layout {
+    position: relative;
+    padding-left: 0;
+}
+
+#layout.active #menu {
+    left: 150px;
+    width: 150px;
+}
+
+#layout.active .menu-link {
+    left: 150px;
+}
+
+/*
+The content `<div>` is where all your content goes.
+*/
+
+.content {
+    /*margin: 0 auto;   makes the content center */ 
+    padding: 0 1em;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+}
+
+.header {
+    margin: 0;
+    color: #333;
+    padding: 2.5em 2em 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header h1 {
+    margin: 0.2em 0;
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.header h2 {
+    font-weight: 300;
+    color: #ccc;
+    padding: 0;
+    margin-top: 0;
+}
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+
+#menu {
+    margin-left: -150px;
+    /* "#menu" width */
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    /* so the menu or its navicon stays above all content */
+    background: #191818;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/*
+    All anchors inside the menu should be styled like this.
+    */
+
+#menu a {
+    color: #999;
+    border: none;
+    padding: 0.6em 0 0.6em 0.6em;
+}
+
+/*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+
+#menu .pure-menu,
+#menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+/*
+    Add that light border to separate items into groups.
+    */
+
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+    border-top: 1px solid #333;
+}
+
+/*
+        Change color of the anchor links on hover/focus.
+        */
+
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+    background: #333;
+}
+
+/*
+    This styles the selected menu item `<li>`.
+    */
+
+#menu .pure-menu-selected,
+#menu .pure-menu-heading {
+    background: #EDEDEF;
+}
+
+/*
+        This styles a link within a selected menu item `<li>`.
+        */
+
+#menu .pure-menu-selected a {
+    color: #fff;
+}
+
+/*
+    This styles the menu heading.
+    */
+
+#menu .pure-menu-heading {
+    font-size: 110%;
+    color: #fff;
+    margin: 0;
+}
+
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+
+.menu-link {
+    position: fixed;
+    display: block;
+    /* show this only on small screens */
+    top: 0;
+    left: 0;
+    /* "#menu width" */
+    background: #000;
+    background: rgba(0,0,0,0.7);
+    font-size: 10px;
+    /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+    background: #000;
+}
+
+.menu-link span {
+    position: relative;
+    display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 0.2em;
+}
+
+.menu-link span:before,
+.menu-link span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " ";
+}
+
+.menu-link span:after {
+    margin-top: 0.6em;
+}
+
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+
+.header{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#layout {
+    padding-left: 150px;
+    /* left col width "#menu" */
+    left: 0;
+}
+
+#menu {
+    left: 150px;
+}
+
+.menu-link {
+    position: fixed;
+    left: 150px;
+    display: none;
+}
+
+#layout.active .menu-link {
+    left: 150px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .page-title{
   border-bottom: 1px solid gray;
   margin-bottom: 30px;
 }
 
-.content{
-}
+
 
 #tickets{
   width: 100%;
@@ -105,6 +368,62 @@
     transform: rotate(-45deg);
 }
 
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*makes view/edit/delete buttons be side by side in one row*/
+.action_buttons{
+    float: left;
+    padding:3px;   
+}
+
+/*makes the column as short as possible*/
+.action_column{
+    padding-left: 10px!important;
+    padding-right:0px!important;
+    width: 120px;
+    min-width: 120px;
+}
+
+
+#new_ticket_status{
+  display:none;
+}
+.pure-button-success {
+  background: rgb(28, 184, 65) !important; /* this is a green */
+  color: white !important;
+}
+
+.pure-button-error {
+  background: rgb(202, 60, 60) !important; /* this is a maroon */
+  color: white !important;
+}
+
+.pure-button-warning {
+  background: rgb(223, 117, 20) !important; /* this is an orange */
+  color: white !important;
+}
+
+.pure-button-secondary {
+  background: rgb(66, 184, 221)!important; /* this is a light blue */
+  color: white !important;
+}
+
+#ticket_description{
+  width:100%;
+}
+
+.hide{
+  display:none;
+}
+
+
 @media (max-width: 47.999em) {
 
     .custom-menu-3 {
@@ -113,6 +432,76 @@
 
     .custom-toggle {
         display: block;
+    }
+
+}
+
+
+
+@media only screen and (min-width:960px){
+    /* styles for browsers larger than 960px; */
+}
+
+@media only screen and (min-width:1440px){
+    /* styles for browsers larger than 1440px; */
+}
+
+@media only screen and (min-width:2000px){
+   /* for sumo sized (mac) screens */
+}
+
+ 
+    @media only screen and (device-width:768px){
+       /* default iPad screens */
+    }
+    /* different techniques for iPad screening */
+   
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    /* For portrait layouts only */
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+   /* For landscape layouts only */
+}
+
+@media (max-width: 1290px) {
+    .submitted_column{
+      display:none; 
+    }
+}
+
+
+@media (max-width: 640px) {
+/*@media only screen and (max-device-width:480px){ /* styles for mobile browsers smaller than 480px; (iPhone) */
+    .action_buttons{
+       float: none !important;
+       padding:3px;   
+    }
+    .content{
+        padding: 0 0.5em !important; 
+    }
+
+    .action_column{
+      min-width: 70px;
+      text-align: center;
+      width: 70px;
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+    .description_column, .category_column{
+      display:none; 
+    }
+
+    .status_column, .location_column,subject_column{
+      padding-left:0px !important;
+      padding-right:0px !important;
     }
 
 }

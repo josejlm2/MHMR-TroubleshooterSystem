@@ -1,7 +1,8 @@
 = content_for(:title, "Create New Location")
 
-= form_tag locations_path, :method => :post, :class => "pure-form pure-form-stacked" do
- = label :location, :name, 'Location Name'
- = text_field :location, :name
- = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
+.pure-u-1
+ = form_tag locations_path, :method => :post, :class => "pure-form pure-form-stacked" do
+  = label :location, :name, 'Location Name'
+  = text_field :location, :name
+  = submit_tag 'Create Location', :class => "pure-button pure-button-success"
 

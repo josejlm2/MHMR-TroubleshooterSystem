@@ -17,11 +17,13 @@ module NavigationHelpers
       '/'
     when /^the list of categories$/
 	categories_path
+    when /^the list of users$/
+	users_path
     when /^the show category$/
 	category_path(@category)
     when /^the edit category page$/
 	edit_category_path(@category)
-	when /^the list of tickets$/
+    when /^the list of tickets$/
 	tickets_path
     when /^the show ticket$/
 	ticket_path(@ticket)
@@ -33,6 +35,8 @@ module NavigationHelpers
 	email_path(@email)
     when /^the edit email page$/
 	edit_email_path(@email)
+    when /^the sign in page$/
+	"mhmr/users/sign_in"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

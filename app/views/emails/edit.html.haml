@@ -1,8 +1,8 @@
-=content_for(:title, "Edit Email")
+= content_for(:title, "Edit Email")
 
+.pure-u-1
+ = form_tag email_path(@email), :method => :put, :class => "pure-form pure-form-stacked" do
+  = label :email, :email_address, 'Email'
+  = email_field :email, :email_address
+  = submit_tag 'Save Changes', :class => "pure-button pure-button-success"
 
-= form_tag email_path(@email), :method => :put, :class => "pure-form pure-form-stacked" do
- = label :email, :email_address, 'Email'
- = email_field :email, :email_address
- = submit_tag 'Save Changes', :class => "pure-button pure-button-primary"
-= link_to 'back to email list', emails_path

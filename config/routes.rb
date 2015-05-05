@@ -1,9 +1,21 @@
 MhmrTroubleshooter::Application.routes.draw do
-  resources :emails # , except:[:show]
+  resources :emails 
+  devise_for :users, :path_prefix => 'mhmr'
   resources :categories
-  resources :tickets
+  resources :tickets do
+   collection do
+	get 'summary'
+	post 'summary'
+	get 'monthSummary'
+	end
+  end
   resources :locations
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  resources :users
   resources :statuses
+  resources :users
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'

@@ -1,4 +1,13 @@
 class Ticket < ActiveRecord::Base
+ @closed="Closed"
+ def self.close
+	@closed
+ end
+ scope :created_in_month, ->(month,year) { where("DATE_PART('month', created_at) = ?  AND DATE_PART('year',  updated_at) = ?", month,year) }
+ scope :closed_in_month, ->(month,year) { where("DATE_PART('month',  updated_at) = ? AND DATE_PART('year',  updated_at) = ? AND status_id = ?", month,  year, Status.find_by_name(@closed).id) }
+ scope :location, ->(location){ where("location_id = ?", location)}
+ scope :category, ->(category){ where("category_id = ?", category)}
+
    belongs_to :location
    belongs_to :category
    belongs_to :status
@@ -17,5 +26,4 @@ class Ticket < ActiveRecord::Base
    validates_presence_of :description, :message => 'cannot be blank'
    validates_presence_of :email, :message => 'cannot be blank'
    validates :phone, format: { with: /\d{3}[- ]?\d{3}[- ]?\d{4}( x\d{4})?|x\d{3}/, message: "incorrect phone format" }
-   
 end

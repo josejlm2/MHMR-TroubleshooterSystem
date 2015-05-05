@@ -1,41 +1,71 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.all
+    if current_user.admin?
+      @locations = Location.order('name').all
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
   end
 
   def create
-    @location = Location.new(params[:location])
+    if current_user.admin?
+      @location = Location.new(params[:location])
      
-    if @location.save
-      redirect_to(:action => 'index')
+      if @location.save
+        redirect_to(:action => 'index')
+      else
+        render('new')
+      end
     else
-      render('new')
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
     end
   end
 
   def new
-    @location = Location.new
+    if current_user.admin?
+      @location = Location.new
 	#@location.tickets.build
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
   end
 
   def edit
-    @location = Location.find(params[:id])
+    if current_user.admin?
+      @location = Location.find(params[:id])
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
   end
 
   def update
-    @location = Location.find(params[:id])
-    
-    if(@location.update_attributes(params[:location]))
-      redirect_to locations_path(@location)
+    if current_user.admin?
+      @location = Location.find(params[:id])
+      
+      if(@location.update_attributes(params[:location]))
+        redirect_to locations_path(@location)
+      else
+        render('index')
+      end
     else
-      render('index')
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
     end
   end
 
   def destroy
-    @location = Location.find(params[:id])
-    @location.destroy
+    if current_user.admin?
+      @location = Location.find(params[:id])
+      @location.destroy
 
-    redirect_to locations_path
+      redirect_to locations_path
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
   end
 end

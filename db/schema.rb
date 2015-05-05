@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150424134208) do
+ActiveRecord::Schema.define(:version => 20150429043958) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20150424134208) do
   end
 
   create_table "tickets", :force => true do |t|
+<<<<<<< HEAD
     t.string  "requestor"
     t.string  "phone"
     t.integer "ru"
@@ -52,4 +53,40 @@ ActiveRecord::Schema.define(:version => 20150424134208) do
     t.integer "status_id"
   end
 
+=======
+    t.string   "requestor"
+    t.string   "phone"
+    t.integer  "ru"
+    t.string   "email"
+    t.string   "room"
+    t.string   "subject"
+    t.text     "description"
+    t.integer  "location_id"
+    t.integer  "status_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0,     :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.boolean  "admin",                  :default => false
+    t.boolean  "manager",                :default => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+>>>>>>> 50e6c4c9ec0666d7c589885bf2c78cd3b6da7860
 end
