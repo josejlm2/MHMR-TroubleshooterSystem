@@ -1,7 +1,7 @@
 class EmailsController < ApplicationController
   def index
     if current_user.admin?
-	@emails = Email.all
+	@emails = Email.order('email_address').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     if current_user.admin?
-      @users = User.all
+      @users = User.order('email').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
