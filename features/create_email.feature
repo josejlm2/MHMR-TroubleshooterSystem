@@ -11,6 +11,7 @@ Scenario:
   And I have no emails
   And I am on the list of emails
   And I follow "Add Button"
+  Given I click on create email
   And I fill in "email_email_address" with "jack@yahoo.com"
   And I press "Save Changes"
   Then I should see "jack@yahoo.com"

@@ -8,7 +8,6 @@ class TicketsController < ApplicationController
 		format.json { render json: @tickets }
 	end
   end       
-  
 
   def select
 	@ticket = Ticket.find(params[:id])
@@ -35,7 +34,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    if current_user.manager? or current_user.admin?
+    if current_user.admin?
 	@ticket = Ticket.find(params[:id])
     else
       flash[:notice] = "Permission Denied!"
@@ -43,7 +42,7 @@ class TicketsController < ApplicationController
     end	
   end
   def update
-    if current_user.manager? or current_user.admin?
+    if current_user.admin?
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
 		redirect_to tickets_path
@@ -74,38 +73,40 @@ class TicketsController < ApplicationController
     end
   end
  def summary
-    if current_user.manager? or current_user.admin?
+    if current_user.admin? or current_user.manager?
 	@Ticket_stats=[]
+    	@year=params.has_key?(:data) ? params[:data][:id] : Date.today.year
+	@year= Integer(@year) rescue Date.today.year
 	(1..12).each do |i|
-		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i).count , Ticket.closed_in_month(i).count,i] )
+		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i,@year).count , Ticket.closed_in_month(i,@year).count,i] )
 	end
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
-    end
+   end
  end
  def monthSummary
-    if current_user.manager? or current_user.admin?
-      @month =params[:id] 
-      @LocationStats=[]
-      @CategoryNames=Hash.new
-      @Month = @@Months[@month.to_i]
-      Location.all.each do |loc|
-	  @TicketLocation=Ticket.location(loc.id)
-	  created= @TicketLocation.created_in_month(@month)
-	  closed=@TicketLocation.closed_in_month(@month)
-	  @LocationStats.push([loc.name, created.count , closed.count ,storeHash(created),storeHash(closed)])
-      end
-      Category.all.each do |cat|
-	  @CategoryNames[cat.id]=cat.name
-      end
-    else
+   if current_user.admin? or current_user.manager?
+    @month =params[:month]
+    @year = params[:year] 
+    @LocationStats=[]
+    @CategoryNames=Hash.new
+    @Month = @@Months[@month.to_i]
+    Location.all.each do |loc|
+	@TicketLocation=Ticket.location(loc.id)
+	created= @TicketLocation.created_in_month(@month,@year)
+	closed=@TicketLocation.closed_in_month(@month,@year)
+	@LocationStats.push([loc.name, created.count , closed.count ,storeHash(created),storeHash(closed)])
+    end
+    Category.all.each do |cat|
+	@CategoryNames[cat.id]=cat.name
+    end
+  else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
-    end
+  end
  end
  def storeHash(data)
-    if current_user.manager? or current_user.admin?
 	temp = Hash.new
 	data.each do |ticket|
 		if temp.has_key?(ticket.category_id)
@@ -115,9 +116,6 @@ class TicketsController < ApplicationController
 		end
 	end
 	return temp
-    else
-      flash[:notice] = "Permission Denied!"
-      redirect_to root_path
-    end
-  end
+ end
 end
+
