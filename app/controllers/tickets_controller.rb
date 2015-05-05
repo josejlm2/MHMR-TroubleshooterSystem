@@ -2,8 +2,8 @@ class TicketsController < ApplicationController
 @@Months=["January","February","March","April","May","June","July","August","September","October","November","December"]
   def index
 
-        @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc').where("status_id != ?", Status.find_by_name("Completed").id)
-	@whichStatus = "All Except Completed"        
+        @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc').where("status_id != ?", Status.find_by_name("Closed").id)
+	@whichStatus = "All Except Closed"        
 
         if(params[:status] == 'all')
             @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc')

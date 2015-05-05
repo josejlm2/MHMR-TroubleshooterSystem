@@ -1,6 +1,10 @@
 class Ticket < ActiveRecord::Base
+ @closed="Closed"
+ def self.close
+	@closed
+ end
  scope :created_in_month, ->(month,year) { where("DATE_PART('month', created_at) = ?  AND DATE_PART('year',  updated_at) = ?", month,year) }
- scope :closed_in_month, ->(month,year) { where("DATE_PART('month',  updated_at) = ? AND DATE_PART('year',  updated_at) = ? AND status_id = ?", month,  year, Status.find_by_name("Completed").id) }
+ scope :closed_in_month, ->(month,year) { where("DATE_PART('month',  updated_at) = ? AND DATE_PART('year',  updated_at) = ? AND status_id = ?", month,  year, Status.find_by_name(@closed).id) }
  scope :location, ->(location){ where("location_id = ?", location)}
  scope :category, ->(category){ where("category_id = ?", category)}
 

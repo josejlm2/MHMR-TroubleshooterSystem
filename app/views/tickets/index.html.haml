@@ -8,7 +8,7 @@
 
 .pure-u-1
  Filter: 
- = link_to "All Except Completed", "/tickets", :class => "pure-button"
+ = link_to "All Except Closed", "/tickets", :class => "pure-button"
  = link_to "All Tickets", "/tickets?status=all", :class => "pure-button"
  - @statuses.each do |status|
   = link_to status.name, "/tickets?status=" + status.name, :class => "pure-button"
