@@ -1,10 +1,18 @@
-= content_for(:title, "Tickets")
+= content_for(:title, "Tickets: #{@whichStatus}")
 
 -#Find me in app/views/tickets/index.html.erb
 
-%span.details.table
-.logs.pagination
- =will_paginate
+.pure-u-1.span.details.table
+ .logs.pagination
+  =will_paginate
+
+.pure-u-1
+ Filter: 
+ = link_to "All Except Completed", "/tickets", :class => "pure-button"
+ = link_to "All Tickets", "/tickets?status=all", :class => "pure-button"
+ - @statuses.each do |status|
+  = link_to status.name, "/tickets?status=" + status.name, :class => "pure-button"
+
 
 %p 
  = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32"), new_ticket_path 
