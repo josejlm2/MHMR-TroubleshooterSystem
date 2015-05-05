@@ -470,6 +470,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 @media (max-width: 1290px) {
     .submitted_column{
       display:none; 
+    }
 }
 
 
