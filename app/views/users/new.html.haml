@@ -7,8 +7,13 @@
  = password_field :user, :password
  = label :user, :password_confirmation, 'Password Confirmation'
  = password_field :user, :password_confirmation
- = label :user, :admin, 'Admin'
- = check_box :user, :admin
- = label :user, :manager, 'Manager'
- = check_box :user, :manager
+ = check_box :user, :admin do
+  = label :user, :admin, 'Admin'
+ Admin
+ %br
+ = check_box :user, :manager do
+  = label :user, :manager, 'Manager'
+ Manager
+ %br
+ %br
  = submit_tag 'Create User', :class => "pure-button pure-button-success"
