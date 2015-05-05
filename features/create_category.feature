@@ -12,9 +12,8 @@ Scenario: Create new Category
   And I press "Log in"
   And I have no categories
   And I am on the list of categories
-  And I follow "Add Button"
   Given I click on create category 
   And I fill in "Name" with "Electricity"
-  And I press "Save Changes"
+  And I press "Create Category"
   Then I should see "Electricity"
   And I should have 1 category

@@ -6,19 +6,34 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 status_list = [
+	"Not Started",
 	"In Progress",
-	"Closed",
-	"Not Started"
+	"Closed"
 ]
 category_list = [
 	"Car",
-	"Building",
-	"Other"
+	"AC",
+	"Other",
+        "Building",
+        "Electrical",
+        "Plumbing"
 ]
 location_list = [
-	"Bryan",
-	"Webb",
-	"Laredo"
+	"Norwood – HCS Hearne",
+        "Bluebonnet – HCS Brenham",
+        "Butler, Brenham",
+        "Caldwell",
+        "Centerville",
+        "LCC/BC",
+        "Family Tree",
+        "Hearne",
+        "Kerr St – HCS Brenham",
+        "Madisonville",
+        "Marylake – A",
+        "Marylake – C",
+        "Maywood – HCS Bryan",
+        "Navasota",
+        "804"
 ]
 @created_dates_list =[
 	"2015-05-01 17:59:12",
