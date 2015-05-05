@@ -81,4 +81,4 @@ gem 'devise'
 gem 'capybara'
 
 # For soft deletion
-gem 'paranoia', '~> 1.0'
+gem 'paranoia'
