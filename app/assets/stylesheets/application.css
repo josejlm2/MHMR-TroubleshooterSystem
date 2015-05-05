@@ -391,6 +391,10 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     min-width: 120px;
 }
 
+
+#new_ticket_status{
+  display:none;
+}
 .pure-button-success {
   background: rgb(28, 184, 65) !important; /* this is a green */
   color: white !important;
@@ -413,6 +417,10 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 #ticket_description{
   width:100%;
+}
+
+.hide{
+  display:none;
 }
 
 
@@ -457,6 +465,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
    /* For landscape layouts only */
+}
+
+@media (max-width: 1290px) {
+    .submitted_column{
+      display:none; 
+    }
 }
 
 

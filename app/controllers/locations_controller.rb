@@ -1,7 +1,7 @@
 class LocationsController < ApplicationController
   def index
     if current_user.admin?
-      @locations = Location.all
+      @locations = Location.order('name').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path

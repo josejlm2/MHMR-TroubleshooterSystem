@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def index
     if current_user.admin?
-	@categories = Category.all
+	@categories = Category.order('name').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
