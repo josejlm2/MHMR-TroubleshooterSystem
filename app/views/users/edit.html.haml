@@ -1,7 +1,7 @@
 =content_for(:title,"Edit User")
 
 .pure-u-1
-= form_tag users_path(@user), :method => :put, :class => "pure-form pure-form-stacked" do
+= form_tag user_path(@user), :method => :put, :class => "pure-form pure-form-stacked" do
  = email_field :user, :email
  = label :user, :password,  'User Password'
  = password_field :user, :password, autofocus: true
