@@ -76,4 +76,22 @@ class CategoriesController < ApplicationController
       redirect_to root_path
     end
   end
+  def deleted
+    if current_user.admin?
+      @categories = Category.only_deleted
+      render('index')
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
+  end
+  def restore
+    if current_user.admin?
+      Category.restore(params[:id])
+      redirect_to deleted_categories_path
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
+  end
 end
