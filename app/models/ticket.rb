@@ -20,10 +20,13 @@ class Ticket < ActiveRecord::Base
    attr_accessible :description
    attr_accessible :location_id
    attr_accessible :ticket_category_id
+   attr_accessible :category_id
+   attr_accessible :created_at
+   attr_accessible :updated_at
    attr_accessible :status_id
    validates_presence_of :requestor, :message => 'cannot be blank'
    validates_presence_of :subject, :message => 'cannot be blank'
    validates_presence_of :description, :message => 'cannot be blank'
    validates_presence_of :email, :message => 'cannot be blank'
-   validates :phone, format: { with: /\d{3}[- ]?\d{3}[- ]?\d{4}( x\d{4})?|x\d{3}/, message: "incorrect phone format" }
+   validates_presence_of :phone, :message => 'cannot be blank'
 end

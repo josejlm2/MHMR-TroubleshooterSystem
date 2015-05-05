@@ -40,20 +40,6 @@ ActiveRecord::Schema.define(:version => 20150429043958) do
   end
 
   create_table "tickets", :force => true do |t|
-<<<<<<< HEAD
-    t.string  "requestor"
-    t.string  "phone"
-    t.integer "ru"
-    t.string  "email"
-    t.string  "room"
-    t.string  "subject"
-    t.text    "description"
-    t.integer "location_id"
-    t.integer "ticket_category_id"
-    t.integer "status_id"
-  end
-
-=======
     t.string   "requestor"
     t.string   "phone"
     t.integer  "ru"
@@ -63,9 +49,9 @@ ActiveRecord::Schema.define(:version => 20150429043958) do
     t.text     "description"
     t.integer  "location_id"
     t.integer  "status_id"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
 
   create_table "users", :force => true do |t|
@@ -88,5 +74,4 @@ ActiveRecord::Schema.define(:version => 20150429043958) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
->>>>>>> 50e6c4c9ec0666d7c589885bf2c78cd3b6da7860
 end
