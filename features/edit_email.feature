@@ -14,4 +14,3 @@ Scenario: edit Email
   And I fill in "email_email_address" with "erick@yahoo.com"
   And I press "Save Changes"
   Then I should see "erick@yahoo.com"
-
