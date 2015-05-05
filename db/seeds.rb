@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 status_list = [
 	"In Progress",
-	"Completed",
+	"Closed",
 	"Not Started"
 ]
 category_list = [
