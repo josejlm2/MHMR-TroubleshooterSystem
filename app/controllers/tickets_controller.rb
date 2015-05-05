@@ -118,3 +118,4 @@ class TicketsController < ApplicationController
 	return temp
  end
 end
+

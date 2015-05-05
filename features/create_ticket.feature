@@ -12,9 +12,9 @@ Scenario: Create new Ticket
   And I press "Log in"
   And I have no tickets
   When I am on the list of tickets
-  And I follow "Create ticket"
+  And I follow "Add Button"
   And I fill in "Requestor" with "John Doe"
   And I fill in "Email" with "john@doe.com"
-  And I press "Save Changes"
+  And I press "Create Ticket"
   Then I should see "John Doe"
   And I should have 1 ticket

@@ -21,5 +21,5 @@ Scenario: Show Ticket
   And I fill in "Password" with "password1"
   And I press "Log in"
   And I have a ticket requestor John
-  And I go to the show ticket
+  And I go to the list of tickets 
   Then I should see "John"
