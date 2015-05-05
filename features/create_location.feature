@@ -10,7 +10,7 @@ Scenario: Create new Location
   And I fill in "Password" with "password1"
   And I press "Log in"
   And I am on the locations page
-  And I follow "Create location"
+  And I follow "Add Button"
   And I fill in "Name" with "Texas"
-  And I press "Save Changes" 
+  And I press "Create Location" 
   Then I should see "Texas"

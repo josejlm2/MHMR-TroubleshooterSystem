@@ -12,9 +12,9 @@ Scenario: Confirm a ticket submission
   And I press "Log in"
   And a clear email queue
   And I am on the list of tickets
-  And I follow "Create ticket"
+  And I follow "Add Button"
   And I fill in "Email" with "john@doe.com"
-  And I press "Save Changes"
+  And I press "Create Ticket"
   Then I should have 1 ticket
   And I should have 1 confirmation e-mails sent
   And the confirmation e-mails should be sent to "john@doe.com"

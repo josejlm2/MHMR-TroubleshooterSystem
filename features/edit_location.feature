@@ -11,8 +11,8 @@ Scenario: edit Location
   And I press "Log in"
   And I have a location name Texas
   And I am on the locations  page
-  And I follow "Edit Location"
+  And I follow "Edit Button"
   And I fill in "Name" with "Virginia"
-  And I press "save changes"
+  And I press "Save Changes"
   Then I should see "Virginia"
 
