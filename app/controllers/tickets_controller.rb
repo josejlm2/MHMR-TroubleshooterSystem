@@ -1,8 +1,20 @@
 class TicketsController < ApplicationController
 @@Months=["January","February","March","April","May","June","July","August","September","October","November","December"]
   def index
-        
-	@tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc')
+
+        @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc').where("status_id != ?", Status.find_by_name("Closed").id)
+	@whichStatus = "All Except Closed"        
+
+        if(params[:status] == 'all')
+            @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc')
+            @whichStatus = "All"
+        elsif(params[:status])
+            @tickets = Ticket.paginate(:page => params[:page], :per_page => 10).order('created_at desc').where("status_id = ?", Status.find_by_name(params[:status]).id)
+            @whichStatus = params[:status]
+        end
+
+        @statuses = Status.all
+	
 	respond_to do |format|
 		format.html
 		format.json { render json: @tickets }
