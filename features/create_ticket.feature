@@ -21,5 +21,5 @@ Scenario: Create new Ticket
   And I fill in "Subject" with "Help"
   And I fill in "Phone Number" with "555 555 5555"
   And I fill in "Description" with "Help Me"
-  And I press "Save Changes"
+  And I press "Create Ticket"
   Then I should have 1 ticket
