@@ -99,7 +99,7 @@ class StatusesController < ApplicationController
   def restore
     if current_user.admin?
       Status.restore(params[:id])
-      redirect_to deleted_locations_path
+      redirect_to deleted_statuses_path
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
