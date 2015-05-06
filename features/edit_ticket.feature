@@ -14,4 +14,4 @@ Scenario: edit Ticket
   And I am on the edit ticket page
   And I fill in "Requestor" with "James Doe"
   And I press "Save Changes"
-  Then I should see "James Doe"
+  Then I should have 1 ticket 

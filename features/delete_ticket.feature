@@ -11,7 +11,10 @@ Scenario: delete Ticket
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
-  And I have a ticket requestor John Doe in room 218
+  And I have a category name cars
+  And I have a status name "In Progress"
+  And I have a location name Bryan
+  And I have a ticket requestor John Doe
   And I am on the list of tickets
   And I follow "Delete"
   Then I should have 0 tickets
