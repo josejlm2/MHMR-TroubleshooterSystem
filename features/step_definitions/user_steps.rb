@@ -17,3 +17,7 @@ Given /^I have users$/ do
   User.create!(email: 'name@temp.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: true)
   User.create!(email: 'name@temporary.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: true)
 end
+
+Given /^I have no users$/ do
+   User.delete_all
+end

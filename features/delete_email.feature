@@ -9,6 +9,7 @@ Scenario: delete Email Entry
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
+  And I have no emails
   And I have a email name jack@yahoo.com
   And I am on the list of emails
   And I follow "Delete"

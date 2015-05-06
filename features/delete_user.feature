@@ -10,6 +10,7 @@ Scenario: delete User
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
+  And I have no users
   And I go to the list of users
   And I have a user
   When I follow "Delete"

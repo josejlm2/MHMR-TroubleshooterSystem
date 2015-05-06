@@ -11,6 +11,7 @@ Scenario: delete Ticket
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
+  And I have no tickets
   And I have a category name cars
   And I have a status name In Progress
   And I have a location name Bryan

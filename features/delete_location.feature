@@ -9,6 +9,7 @@ Scenario: delete Location
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
+  And I have no locations
   And I have a location name texas
   And I am on the locations page
   And I follow "Delete"
