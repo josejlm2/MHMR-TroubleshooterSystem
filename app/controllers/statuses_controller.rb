@@ -1,7 +1,7 @@
 class StatusesController < ApplicationController
  def index
     if current_user.admin?
-	@statuses = Status.all
+	@statuses = Status.order('id').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
@@ -11,7 +11,7 @@ class StatusesController < ApplicationController
 
   def index
     if current_user.admin?
-	@status = Status.all
+	@status = Status.order('id').all
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path
