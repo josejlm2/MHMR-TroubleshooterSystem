@@ -423,6 +423,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   display:none;
 }
 
+.row_title{
+  background: #EDEDEF;
+  text-align: center;
+  font-weight:bold;
+}
+
 
 @media (max-width: 47.999em) {
 
