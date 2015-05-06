@@ -8,10 +8,10 @@
 
 .pure-u-1
  Filter: 
- = link_to "All Except Closed", "/tickets", :class => "pure-button"
- = link_to "All Tickets", "/tickets?status=all", :class => "pure-button"
+ = link_to "All Except Closed", "/tickets", :class => "pure-button filter-button"
+ = link_to "All Tickets", "/tickets?status=all", :class => "pure-button filter-button"
  - @statuses.each do |status|
-  = link_to status.name, "/tickets?status=" + status.name, :class => "pure-button"
+  = link_to status.name, "/tickets?status=" + status.name, :class => "pure-button filter-button"
 
 
 %p 
@@ -30,7 +30,7 @@
    
   %tbody
   - @tickets.each do |ticket|
-   %tr{:class => cycle('','pure-table-odd')}
+   %tr{:class => "#{cycle('','pure-table-odd')} row_ticket"}
     %td{:class => "action_column"}
      %span{:class => "action_buttons"}= link_to image_tag("view_button.png", :alt => "View Button", size: "32x32"), ticket_path(ticket), :method => :get
      %span{:class => "action_buttons"}= link_to image_tag("edit_button.png", :alt => "Edit Button", size: "32x32"), edit_ticket_path(ticket), :method => :get

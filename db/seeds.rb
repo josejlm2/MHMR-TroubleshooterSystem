@@ -21,7 +21,8 @@ category_list = [
 location_list = [
 	"Norwood – HCS Hearne",
         "Bluebonnet – HCS Brenham",
-        "Butler, Brenham",
+        "Butler",
+        "Brenham",
         "Caldwell",
         "Centerville",
         "LCC/BC",
