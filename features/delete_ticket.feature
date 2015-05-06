@@ -12,7 +12,7 @@ Scenario: delete Ticket
   And I fill in "Password" with "password1"
   And I press "Log in"
   And I have a category name cars
-  And I have a status name "In Progress"
+  And I have a status name In Progress
   And I have a location name Bryan
   And I have a ticket requestor John Doe
   And I am on the list of tickets

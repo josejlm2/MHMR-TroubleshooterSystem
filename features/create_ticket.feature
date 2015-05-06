@@ -12,7 +12,7 @@ Scenario: Create new Ticket
   And I press "Log in"
   And I have no tickets
   And I have a category name cars
-  And I have a status name "In Progress"
+  And I have a status name In Progress
   And I have a location name Bryan
   When I am on the list of tickets
   And I follow "Add Button"
