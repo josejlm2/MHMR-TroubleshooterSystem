@@ -372,6 +372,9 @@ Hides the menu at `48em`, but modify this based on your app's needs.
    padding-left:10px;
 }
 
+.hide{
+   display:none !important;
+}
 .button-success,
 .button-error,
 .button-warning,
