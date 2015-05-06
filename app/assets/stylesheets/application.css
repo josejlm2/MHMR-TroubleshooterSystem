@@ -368,6 +368,10 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     transform: rotate(-45deg);
 }
 
+.archive_button{
+   padding-left:10px;
+}
+
 .button-success,
 .button-error,
 .button-warning,
