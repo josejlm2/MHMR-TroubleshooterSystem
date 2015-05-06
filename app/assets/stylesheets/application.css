@@ -392,9 +392,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 }
 
 
+/*hides the status dropdown from create ticket*/
 #new_ticket_status{
   display:none;
 }
+
 .pure-button-success {
   background: rgb(28, 184, 65) !important; /* this is a green */
   color: white !important;
@@ -429,6 +431,15 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   font-weight:bold;
 }
 
+
+
+.row_ticket{
+  overflow-y: scroll !important;
+}
+
+.filter-button{
+  margin: 3px !important;
+}
 
 @media (max-width: 47.999em) {
 
@@ -496,6 +507,9 @@ Hides the menu at `48em`, but modify this based on your app's needs.
       width: 70px;
     }
 
+    .description_column{
+      display:none; 
+    }
 }
 
 
