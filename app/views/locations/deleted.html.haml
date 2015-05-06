@@ -1,0 +1,13 @@
+= content_for(:title, "Deleted Locations")
+
+.pure-u-1
+
+ %table#locations.pure-table.pure-table-bordered
+  %thead
+   %th  Restore
+   %th  Location Name 
+  %tbody
+  - @locations.each do |location|
+   %tr
+    %td= link_to image_tag("add_button.png", :alt => "Restore Button" , size: "32x32", class:"table_button pure-img"), restore_location_path(location), :method => :get
+    %td= location.name

@@ -79,3 +79,6 @@ gem 'figaro'
 # To use devise
 gem 'devise'
 gem 'capybara'
+
+# For soft deletion
+gem 'paranoia'
