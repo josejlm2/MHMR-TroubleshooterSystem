@@ -37,7 +37,7 @@ MhmrTroubleshooter::Application.routes.draw do
   match '/categories/:id/restore' => 'categories#restore'
   match '/emails/:id/restore' => 'emails#restore'
   match '/locations/:id/restore' => 'locations#restore'
-  match '/statuses/:id/restore' => 'stasuses#restore'
+  match '/statuses/:id/restore' => 'statuses#restore'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
