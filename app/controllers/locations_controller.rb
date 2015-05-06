@@ -3,7 +3,7 @@ class LocationsController < ApplicationController
     if current_user.admin?
       @locations = Location.order('name').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -18,7 +18,7 @@ class LocationsController < ApplicationController
         render('new')
       end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -28,7 +28,7 @@ class LocationsController < ApplicationController
       @location = Location.new
 	#@location.tickets.build
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -37,7 +37,7 @@ class LocationsController < ApplicationController
     if current_user.admin?
       @location = Location.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -52,7 +52,7 @@ class LocationsController < ApplicationController
         render('index')
       end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -64,7 +64,7 @@ class LocationsController < ApplicationController
 
       redirect_to locations_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -74,7 +74,7 @@ class LocationsController < ApplicationController
       @locations = Location.only_deleted
       render('deleted')
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -83,7 +83,7 @@ class LocationsController < ApplicationController
       Location.restore(params[:id])
       redirect_to deleted_locations_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end

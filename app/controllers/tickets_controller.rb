@@ -49,7 +49,7 @@ class TicketsController < ApplicationController
     if current_user.admin?
 	@ticket = Ticket.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end	
   end
@@ -62,7 +62,7 @@ class TicketsController < ApplicationController
 		render('index')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -70,7 +70,7 @@ class TicketsController < ApplicationController
     if current_user.admin?
 	@ticket = Ticket.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -80,7 +80,7 @@ class TicketsController < ApplicationController
 	@ticket.destroy
 	redirect_to tickets_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -93,7 +93,7 @@ class TicketsController < ApplicationController
 		@Ticket_stats.push([@@Months[i-1],Ticket.created_in_month(i,@year).count , Ticket.closed_in_month(i,@year).count,i] )
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
    end
  end
@@ -114,7 +114,7 @@ class TicketsController < ApplicationController
 	@CategoryNames[cat.id]=cat.name
     end
   else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
   end
  end

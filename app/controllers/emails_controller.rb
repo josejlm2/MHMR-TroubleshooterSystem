@@ -3,7 +3,7 @@ class EmailsController < ApplicationController
     if current_user.admin?
 	@emails = Email.order('email_address').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end 
   end
@@ -11,7 +11,7 @@ class EmailsController < ApplicationController
     if current_user.admin?
        @email = Email.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -19,7 +19,7 @@ class EmailsController < ApplicationController
     if current_user.admin?
 	@email = Email.new
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -32,7 +32,7 @@ class EmailsController < ApplicationController
 		render('new')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -40,7 +40,7 @@ class EmailsController < ApplicationController
     if current_user.admin?
 	@email = Email.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -53,7 +53,7 @@ class EmailsController < ApplicationController
 		render('index')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -62,7 +62,7 @@ class EmailsController < ApplicationController
     if current_user.admin?
 	@email = Email.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -72,7 +72,7 @@ class EmailsController < ApplicationController
 	@email.destroy
 	redirect_to emails_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -81,7 +81,7 @@ class EmailsController < ApplicationController
       @emails = Email.only_deleted
       render('deleted')
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -90,7 +90,7 @@ class EmailsController < ApplicationController
       Email.restore(params[:id])
       redirect_to deleted_emails_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end

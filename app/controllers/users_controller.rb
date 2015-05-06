@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @users = User.order('email').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @user = User.new
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -24,11 +24,11 @@ class UsersController < ApplicationController
         flash[:notice] = "Successfully created User."
         redirect_to users_path
       else
-        flash[:notice] = "Error. Try again."
+        flash[:failure] = "Error. Try again."
         render :action => 'new'
       end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @user = User.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @user = User.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
         render :action => 'edit'
       end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     if current_user.admin?
       @user = User.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -85,7 +85,7 @@ class UsersController < ApplicationController
         redirect_to users_path
       end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
