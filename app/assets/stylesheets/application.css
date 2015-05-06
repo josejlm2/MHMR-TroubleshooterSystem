@@ -557,6 +557,20 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     100% { top: 0; }
 }
 
+
+
+
+
+
+
+
+#ticket_description,#ticket_subject{
+  width: 100% !important;
+}
+
+
+
+
 @media (max-width: 47.999em) {
 
     .custom-menu-3 {
