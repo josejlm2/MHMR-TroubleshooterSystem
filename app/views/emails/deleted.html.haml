@@ -1,0 +1,14 @@
+= content_for(:title, "Deleted Emails")
+ 
+.pure-u-1
+
+ %table#emails.pure-table.pure-table-bordered
+  %thead
+   %th  Restore 
+   %th  Email 
+  %tbody
+  - @emails.each do |email|
+   %tr
+    %td= link_to image_tag("add_button.png", :alt => "Restore Button" , size: "32x32", class:"table_button pure-img"), restore_email_path(email), :method => :get
+    %td= email.email_address
+

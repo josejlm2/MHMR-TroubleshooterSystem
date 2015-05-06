@@ -1,0 +1,13 @@
+= content_for(:title, "Deleted Categories")
+
+.pure-u-1
+
+ %table#categories.pure-table.pure-table-bordered
+  %thead
+   %th  Restore
+   %th  Name
+  %tbody
+  - @categories.each do |category|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("add_button.png", :alt => "Restore Button", size: "32x32", class:"table_button"), restore_category_path(category), :method => :get
+    %td= category.name

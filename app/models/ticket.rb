@@ -29,4 +29,5 @@ class Ticket < ActiveRecord::Base
    validates_presence_of :description, :message => 'cannot be blank'
    validates_presence_of :email, :message => 'cannot be blank'
    validates_presence_of :phone, :message => 'cannot be blank'
+   acts_as_paranoid
 end
