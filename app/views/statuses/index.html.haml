@@ -3,7 +3,9 @@
 
 .pure-u-1
  %p 
-  = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"table_button"), new_status_path
+  = link_to image_tag("add_button.png", :alt => "Add Button", size: "32x32", class:"action_buttons"), new_status_path
+ %p
+  = link_to image_tag("archive_button.png", :alt => "Archive Button", size: "32x34", class:"archive_button"), deleted_statuses_path
 
  %table#statuses.pure-table.pure-table-bordered
   %thead
