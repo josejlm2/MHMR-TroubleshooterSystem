@@ -44,8 +44,9 @@
           %h1= content_for?(:title) ? yield(:title) : "default title"
           %p= content_for?(:extra) ? yield(:extra) : ""
           - if flash[:notice]
-            %div.notice
-            =flash[:notice]  
+            %div.notice{:id => "alert"}
+              %a{:class => "alert", :href=> "#alert"}
+                =flash[:notice]  
             
         .content
           %div
