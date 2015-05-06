@@ -85,4 +85,13 @@ class EmailsController < ApplicationController
       redirect_to root_path
     end
   end
+  def restore
+    if current_user.admin?
+      Email.restore(params[:id])
+      redirect_to deleted_emails_path
+    else
+      flash[:notice] = "Permission Denied!"
+      redirect_to root_path
+    end
+  end
 end

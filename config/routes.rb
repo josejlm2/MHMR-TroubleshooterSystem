@@ -34,6 +34,11 @@ MhmrTroubleshooter::Application.routes.draw do
 
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'
+
+  match "/categories/:id/restore" => "categories#restore"
+  match "/emails/:id/restore" => "emails#restore"
+  match "/locations/:id/restore" => "locations#restore"
+  match "/statuses/:id/restore" => "statuses#restore"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
