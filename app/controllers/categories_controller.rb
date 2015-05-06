@@ -79,7 +79,7 @@ class CategoriesController < ApplicationController
   def deleted
     if current_user.admin?
       @categories = Category.only_deleted
-      render('index')
+      render('deleted')
     else
       flash[:notice] = "Permission Denied!"
       redirect_to root_path

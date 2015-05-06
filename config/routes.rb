@@ -3,12 +3,18 @@ MhmrTroubleshooter::Application.routes.draw do
    collection do
 	get 'deleted'
 	end
+   member do
+	get 'restore'
+	end
   end
   devise_for :users, :path_prefix => 'mhmr'
   resources :categories do
    collection do
 	get 'deleted'
 	end
+   member do
+	get 'restore'
+   end
   end
   resources :tickets do
    collection do
@@ -21,6 +27,9 @@ MhmrTroubleshooter::Application.routes.draw do
    collection do
 	get 'deleted'
 	end
+   member do
+	get 'restore'
+	end
    end
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
@@ -30,14 +39,14 @@ MhmrTroubleshooter::Application.routes.draw do
    collection do
 	get 'deleted'
 	end
+   member do
+	get 'restore'
+	end
    end
+
   mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   root :to => 'tickets#index'
 
-  match '/categories/:id/restore' => 'categories#restore'
-  match '/emails/:id/restore' => 'emails#restore'
-  match '/locations/:id/restore' => 'locations#restore'
-  match '/statuses/:id/restore' => 'statuses#restore'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

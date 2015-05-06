@@ -1,0 +1,13 @@
+= content_for(:title, "Deleted Statuses")
+
+.pure-u-1
+
+ %table#statuses.pure-table.pure-table-bordered
+  %thead
+   %th  Restore
+   %th  Name
+  %tbody
+  - @status.each do |status|
+   %tr{:class => cycle('','pure-table-odd')}
+    %td= link_to image_tag("add_button.png", :alt => "Restore Button" , size: "32x32", class:"table_button"), restore_status_path(status), :method => :get
+    %td= status.name
