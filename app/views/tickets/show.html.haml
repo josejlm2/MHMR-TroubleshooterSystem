@@ -3,34 +3,43 @@
 .pure-u-1
  %table.pure-table.pure-table-bordered
   %tbody
+   %tr{:class => "row_title"} 
+    %td Requestor Info
+    %td 
    %tr
-    %td Requestor
+    %td Name
     %td= @ticket.requestor
    %tr
     %td Phone
     %td= @ticket.phone
    %tr
-    %td RU
-    %td= @ticket.ru
-   %tr
     %td Email
     %td= @ticket.email
    %tr
     %td Room
-    %td= @ticket.room
+    %td= @ticket.room  
+   %tr{:class => "row_title"} 
+    %td Ticket Info
+    %td 
+   %tr
+    %td RU
+    %td= @ticket.ru
+   %tr
+    %td Status
+    %td= Status.find(@ticket.status_id).name
+   %tr
+    %td Category
+    %td= Category.find(@ticket.category_id).name
+   %tr
+    %td Location
+    %td= Location.find(@ticket.location_id).name
+   %tr
+    %td Time Submitted
+    %td= @ticket.created_at
    %tr
     %td Subject
     %td= @ticket.subject
    %tr
     %td Description
     %td= @ticket.description
-   %tr
-    %td Location
-    %td= Location.find(@ticket.location_id).name
-   %tr
-    %td Category
-    %td= Category.find(@ticket.category_id).name
-   %tr
-    %td Status
-    %td= Status.find(@ticket.status_id).name
 
