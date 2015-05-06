@@ -48,13 +48,14 @@
               = link_to "Log Out", destroy_user_session_path, {:class => "pure-menu-link", :method => :delete}
             
       #main
+        - if flash[:notice]
+          %div.notice{:id => "alert"}
+            %a{:class => "alert", :href=> "#alert"}
+              =flash[:notice]
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"
           %p= content_for?(:extra) ? yield(:extra) : ""
-          - if flash[:notice]
-            %div.notice{:id => "alert"}
-              %a{:class => "alert", :href=> "#alert"}
-                =flash[:notice]  
+            
             
         .content
           %div
