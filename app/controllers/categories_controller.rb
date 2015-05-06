@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
     if current_user.admin?
 	@categories = Category.order('name').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -11,7 +11,7 @@ class CategoriesController < ApplicationController
     if current_user.admin?
 	@category = Category.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
     if current_user.admin?
 	@category =Category.new
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
 		render('new')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -41,7 +41,7 @@ class CategoriesController < ApplicationController
     if current_user.admin?
 	@category = Category.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -54,7 +54,7 @@ class CategoriesController < ApplicationController
 		render('index')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -62,7 +62,7 @@ class CategoriesController < ApplicationController
     if current_user.admin?
 	@category = Category.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -72,7 +72,7 @@ class CategoriesController < ApplicationController
 	@category.destroy
 	redirect_to categories_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -81,7 +81,7 @@ class CategoriesController < ApplicationController
       @categories = Category.only_deleted
       render('deleted')
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -90,7 +90,7 @@ class CategoriesController < ApplicationController
       Category.restore(params[:id])
       redirect_to deleted_categories_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end

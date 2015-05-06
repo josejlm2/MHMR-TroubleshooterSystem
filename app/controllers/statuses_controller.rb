@@ -3,7 +3,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@statuses = Status.order('id').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -13,7 +13,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@status = Status.order('id').all
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -22,7 +22,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@status = Status.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -31,7 +31,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@status =Status.new
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -44,7 +44,7 @@ class StatusesController < ApplicationController
 		render('new')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -52,7 +52,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@status = Status.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -65,7 +65,7 @@ class StatusesController < ApplicationController
 		render('index')
 	end
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -73,7 +73,7 @@ class StatusesController < ApplicationController
     if current_user.admin?
 	@status = Status.find(params[:id])
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -83,7 +83,7 @@ class StatusesController < ApplicationController
 	@status.destroy
 	redirect_to statuses_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -92,7 +92,7 @@ class StatusesController < ApplicationController
       @status = Status.only_deleted
       render('deleted')
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
@@ -101,7 +101,7 @@ class StatusesController < ApplicationController
       Status.restore(params[:id])
       redirect_to deleted_statuses_path
     else
-      flash[:notice] = "Permission Denied!"
+      flash[:failure] = "Permission Denied!"
       redirect_to root_path
     end
   end
