@@ -42,7 +42,10 @@
       #main
         .header
           %h1= content_for?(:title) ? yield(:title) : "default title"
-          %p= content_for?(:extra) ? yield(:extra) : ""  
+          %p= content_for?(:extra) ? yield(:extra) : ""
+          - if flash[:notice]
+            %div.notice
+            =flash[:notice]  
             
         .content
           %div
