@@ -5,7 +5,7 @@ describe User do
            user = User.new(email: 'name@test.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: true)
 	   expect(user).to be_valid
 	end
-   it "allows an existing user to sign in" do
+   it "allows a user to sign in" do
         user = User.create(email: 'name@test.com', password: 'password1', password_confirmation: 'password1', admin: true, manager: true)
         visit "/mhmr/users/sign_in"
         fill_in "Email", :with => "name@test.com"
