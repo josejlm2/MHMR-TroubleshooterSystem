@@ -22,6 +22,6 @@
    -@CategoryNames.each do |key,value|
     %tr{:class => cycle('','pure-table-odd')}
      %td
-     %td= stats[0] +" "+ value
+     %td=  value
      %td= stats[3].has_key?(key) ? stats[3][key] : 0
      %td= stats[4].has_key?(key) ? stats[4][key] : 0

@@ -34,7 +34,6 @@ location_list = [
         "Maywood – HCS Bryan",
         "Navasota",
         "804"
-
 ]
 @created_dates_list =[
 	"2015-05-01 17:59:12",
