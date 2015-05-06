@@ -61,9 +61,9 @@ ActiveRecord::Schema.define(:version => 20150503222932) do
     t.text     "description"
     t.integer  "location_id"
     t.integer  "status_id"
-    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
     t.datetime "deleted_at"
   end
 

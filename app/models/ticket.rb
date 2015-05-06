@@ -19,7 +19,15 @@ class Ticket < ActiveRecord::Base
    attr_accessible :subject
    attr_accessible :description
    attr_accessible :location_id
+   attr_accessible :ticket_category_id
    attr_accessible :category_id
-   attr_accessible :status_id, :created_at, :updated_at
+   attr_accessible :created_at
+   attr_accessible :updated_at
+   attr_accessible :status_id
+   validates_presence_of :requestor, :message => 'cannot be blank'
+   validates_presence_of :subject, :message => 'cannot be blank'
+   validates_presence_of :description, :message => 'cannot be blank'
+   validates_presence_of :email, :message => 'cannot be blank'
+   validates_presence_of :phone, :message => 'cannot be blank'
    acts_as_paranoid
 end

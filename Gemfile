@@ -20,6 +20,7 @@ gem 'pg'
 gem 'purecss-rails'
 gem 'haml'
 gem 'will_paginate', '~> 3.0.6'
+gem 'custom_error_message'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do  

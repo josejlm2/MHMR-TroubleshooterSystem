@@ -10,6 +10,7 @@ Scenario: delete Category
   And I fill in "Email" with "name@test.com"
   And I fill in "Password" with "password1"
   And I press "Log in"
+  And I have no categories
   And I have a category name cars
   And I am on the list of categories
   When I follow "Delete"

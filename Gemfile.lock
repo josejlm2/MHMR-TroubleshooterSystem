@@ -88,6 +88,7 @@ GEM
       rails (>= 3, < 5)
     cucumber-rails-training-wheels (1.0.0)
       cucumber-rails (>= 1.1.1)
+    custom_error_message (1.1.1)
     database_cleaner (1.4.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -327,6 +328,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   cucumber-rails
   cucumber-rails-training-wheels
+  custom_error_message
   database_cleaner
   devise
   factory_girl_rails
