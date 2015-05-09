@@ -30,4 +30,13 @@ class Ticket < ActiveRecord::Base
    validates_presence_of :email, :message => 'cannot be blank'
    validates_presence_of :phone, :message => 'cannot be blank'
    acts_as_paranoid
+   def location
+	Location.unscoped { super }
+   end
+   def category
+	Category.unscoped { super }
+   end
+   def status
+	Status.unscoped {super}
+   end
 end
