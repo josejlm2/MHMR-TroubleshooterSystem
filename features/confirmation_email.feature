@@ -21,7 +21,7 @@ Scenario: Confirm a ticket submission
   And I fill in "Subject" with "Help"
   And I fill in "Phone Number" with "555 555 5555"
   And I fill in "Description" with "Help Me"
-  And I press "Save Changes"
+  And I press "Create Ticket"
   Then I should have 1 ticket
   And I should have 1 confirmation e-mails sent
   And the confirmation e-mails should be sent to "john@doe.com"

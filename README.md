@@ -8,7 +8,7 @@ This our public repository for our [CSCE 431 Software Engineering Project](http:
 
 #Project information
 
-###Goal
+###[Goal](https://vimeo.com/126976146)
 Create a facility troubleshooter system for the MHMR staff. 
 
 ###Description
