@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-   has_many :tickets, dependent: :destroy
+   has_many :tickets
    attr_accessible :name
    acts_as_paranoid
 end
