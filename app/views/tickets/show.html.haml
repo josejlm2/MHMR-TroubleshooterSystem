@@ -26,13 +26,13 @@
     %td= @ticket.ru
    %tr
     %td Status
-    %td= Status.find(@ticket.status_id).name
+    %td= Status.with_deleted.find(@ticket.status_id).name
    %tr
     %td Category
-    %td= Category.find(@ticket.category_id).name
+    %td= Category.with_deleted.find(@ticket.category_id).name
    %tr
     %td Location
-    %td= Location.find(@ticket.location_id).name
+    %td= Location.with_deleted.find(@ticket.location_id).name
    %tr
     %td Time Submitted
     %td= @ticket.created_at
