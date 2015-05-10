@@ -46,7 +46,7 @@ class TicketsController < ApplicationController
   end
 
   def edit
-    if current_user.admin?
+    if current_user.admin? or current_user.manager?
 	@ticket = Ticket.find(params[:id])
     else
       flash[:failure] = "Permission Denied!"
@@ -54,7 +54,7 @@ class TicketsController < ApplicationController
     end	
   end
   def update
-    if current_user.admin?
+    if current_user.admin? or current_user.manager?
 	@ticket = Ticket.find(params[:id])
 	if @ticket.update_attributes(params[:ticket])
 		redirect_to tickets_path

@@ -28,13 +28,13 @@
     = text_field :ticket, :room
    %div.pure-u-md-1-2.pure-u-1.newticket
     = label :ticket, :location_id, 'Location'
-    = collection_select(:ticket, :location_id, Location.all, :id, :name)
+    = collection_select(:ticket, :location_id, Location.with_deleted.all, :id, :name)
    %div.pure-u-md-1-2.pure-u-1.newticket
     = label :ticket, :category_id, 'Ticket Category'
-    = collection_select(:ticket, :category_id, Category.all, :id, :name)
+    = collection_select(:ticket, :category_id, Category.with_deleted.all, :id, :name)
    %div.pure-u-md-1-2.pure-u-1.newticket
     = label :ticket, :status_id, 'Ticket Status'
-    = collection_select(:ticket, :status_id, Status.all, :id, :name)
+    = collection_select(:ticket, :status_id, Status.with_deleted.all, :id, :name)
    %div.pure-u-md-3-4.pure-u-1.newticket
     = label :ticket, :subject, 'Subject*'
     = text_area :ticket, :subject, :cols => "100", :rows => "1"
